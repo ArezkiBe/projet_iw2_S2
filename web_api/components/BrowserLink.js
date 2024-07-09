@@ -20,21 +20,3 @@ class BrowserLink extends Component {
 }
 
 export default BrowserLink;
-
-
-// export function BrowserLink(props) {
-//   return {
-//     type: "a",
-//     attributes: {
-//       href: props.path,
-//     },
-//     events: {
-//       click: [function (e) {
-//         e.preventDefault();
-//         window.history.pushState({}, null, props.path);
-//         window.dispatchEvent(new Event("pushstate"));
-//       }],
-//     },
-//     children: [props.title],
-//   };
-// }

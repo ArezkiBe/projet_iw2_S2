@@ -21,11 +21,24 @@ class Page2 extends Component{
   }
 
   updateDOM() {
-    this.rootElement = this.render();
-    let update = new CustomEvent("updateDOM", {"detail": this.rootElement})
+    //this.rootElement = this.renderCounter();
+    const counterElement = this.renderCounter();
+    let update = new CustomEvent("updateDOM", {
+      detail: { id: "counter", element: counterElement },
+    });;
 
     window.dispatchEvent(update);
+  }
 
+  renderCounter() {
+    return {
+      type: "h1",
+      attributes: {
+        id: "counter",
+        class: "counter",
+      },
+      children: ["Counter: " + this.state.count],
+    };
   }
 
 
@@ -55,13 +68,7 @@ class Page2 extends Component{
             title: "Click me!"
           }
         },
-        {
-          type: "h1",
-          attributes: {
-            class: "counter"
-          },
-          children: ["Counter: " + this.state.count],
-        },
+        this.renderCounter(),
         {
           type: Button,
           attributes : {

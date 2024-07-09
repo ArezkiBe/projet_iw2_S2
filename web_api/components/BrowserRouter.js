@@ -1,46 +1,44 @@
-const BrowserRouter = function (rootElement, routes)  {
-  const managePath = () => {
+import MiniReactDom from "../core/MiniReactDom.js";
+
+class BrowserRouter {
+  constructor(rootElement, routes) {
+    this.rootElement = rootElement;
+    this.routes = routes;
+    
+    this.init();
+  }
+
+  init() {
+    const managePath = this.managePath.bind(this);
+
+    window.addEventListener("popstate", () => {
+      this.rootElement.replaceChild(MiniReactDom.renderStructure(managePath()), this.rootElement.childNodes[0]);
+    });
+    window.addEventListener("pushstate", () => {
+      this.rootElement.replaceChild(MiniReactDom.renderStructure(managePath()), this.rootElement.childNodes[0]);
+    });
+    window.addEventListener("updateDOM", (e) => {
+      this.updateElement(e.detail.id, e.detail.element);
+    });
+
+    this.rootElement.appendChild(MiniReactDom.renderStructure(managePath()));
+  }
+
+  managePath () {
     const currentPath = window.location.pathname;
-    const elementGenerator = routes[currentPath] ?? routes["*"];
+    const elementGenerator = this.routes[currentPath] ?? this.routes["*"];
     let elem = new elementGenerator().render();
     return elem;
   }
 
-  window.addEventListener("popstate", function () {
-    rootElement.replaceChild(this.renderStructure(managePath()), rootElement.childNodes[0]);
-  }.bind(this));
-  window.addEventListener("pushstate", function () {
-    rootElement.replaceChild(this.renderStructure(managePath()), rootElement.childNodes[0]);
-  }.bind(this));
+  updateElement(id, newElementStructure) {
+    const oldElement = document.getElementById(id);
+    const newElement = MiniReactDom.renderStructure(newElementStructure);
 
-  window.addEventListener("updateDOM", function (e) {
-    rootElement.replaceChild(this.renderStructure(e.detail), rootElement.childNodes[0]);
-  }.bind(this))
-
-  rootElement.appendChild(this.renderStructure(managePath()));
-
-  //const oldPushState = window.history.pushState;
-  //window.history.pushState = function (data, title, url) {
-  //  oldPushState.call(window.history, data, title, url);
-  //  window.dispatchEvent(new Event("popstate"));
-  //};
+    if (oldElement && newElement) {
+      oldElement.replaceWith(newElement);
+    }
+  }
 }
 
 export default BrowserRouter;
-
-// export function BrowserLink(props) {
-//   return {
-//     type: "a",
-//     attributes: {
-//       href: props.path,
-//     },
-//     events: {
-//       click: [function (e) {
-//         e.preventDefault();
-//         window.history.pushState({}, null, props.path);
-//         window.dispatchEvent(new Event("pushstate"));
-//       }],
-//     },
-//     children: [props.title],
-//   };
-// }
