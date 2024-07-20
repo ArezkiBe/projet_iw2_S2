@@ -1,3 +1,4 @@
+import Data from "../core/Data.js";
 import MiniReactDom from "../core/MiniReactDom.js";
 
 class BrowserRouter {
@@ -8,26 +9,28 @@ class BrowserRouter {
     this.init();
   }
 
-  init() {
+  async init() {
     const managePath = this.managePath.bind(this);
 
-    window.addEventListener("popstate", () => {
-      this.rootElement.replaceChild(MiniReactDom.renderStructure(managePath()), this.rootElement.childNodes[0]);
+    window.addEventListener("popstate", async() => {
+      this.rootElement.replaceChild(MiniReactDom.renderStructure(await managePath()), this.rootElement.childNodes[0]);
     });
-    window.addEventListener("pushstate", () => {
-      this.rootElement.replaceChild(MiniReactDom.renderStructure(managePath()), this.rootElement.childNodes[0]);
+    window.addEventListener("pushstate", async() => {
+      this.rootElement.replaceChild(MiniReactDom.renderStructure(await managePath()), this.rootElement.childNodes[0]);
     });
     window.addEventListener("updateDOM", (e) => {
       this.updateElement(e.detail.id, e.detail.element);
     });
 
-    this.rootElement.appendChild(MiniReactDom.renderStructure(managePath()));
+    this.rootElement.appendChild(MiniReactDom.renderStructure(await managePath()));
   }
 
-  managePath () {
+  async managePath () {
+    const data = new Data();
+    await data.fetchData();
     const currentPath = window.location.pathname;
     const elementGenerator = this.routes[currentPath] ?? this.routes["*"];
-    let elem = new elementGenerator().render();
+    let elem = new elementGenerator(data).render();
     return elem;
   }
 

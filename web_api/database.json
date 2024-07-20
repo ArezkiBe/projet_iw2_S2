@@ -1,0 +1,100 @@
+{
+  "sports": [
+    {
+      "id": "sport1",
+      "name": "Football",
+      "description": "A team sport played with a spherical ball between two teams of eleven players.",
+      "type": "Team",
+      "sponsors": ["Nike", "Adidas"],
+      "logoUrl": "https://example.com/football_logo.png",
+      "bannerUrl": "https://example.com/football_banner.png"
+    },
+    {
+      "id": "sport2",
+      "name": "Tennis",
+      "description": "A racket sport that can be played individually against a single opponent or between two teams of two players each.",
+      "type": "Individual",
+      "sponsors": ["Wilson", "Babolat"],
+      "logoUrl": "https://example.com/tennis_logo.png",
+      "bannerUrl": "https://example.com/tennis_banner.png"
+    }
+  ],
+  "spots": [
+    {
+      "id": "spot1",
+      "name": "Central Stadium",
+      "description": "A large stadium for various sports events.",
+      "rating": 4.5,
+      "address": "123 Main St, City, Country",
+      "type": "Outdoor",
+      "sports": ["Football", "Athletics"],
+      "bannerUrl": "https://example.com/stadium_banner.png",
+      "logoUrl": "https://example.com/stadium_logo.png",
+      "events": ["event1", "event2"]
+    },
+    {
+      "id": "spot2",
+      "name": "Indoor Arena",
+      "description": "An indoor arena suitable for various indoor sports.",
+      "rating": 4.2,
+      "address": "456 Elm St, City, Country",
+      "type": "Indoor",
+      "sports": ["Basketball", "Volleyball"],
+      "bannerUrl": "https://example.com/arena_banner.png",
+      "logoUrl": "https://example.com/arena_logo.png",
+      "events": ["event3", "event4"]
+    }
+  ],
+  "mainPage": {
+    "bannerUrl": "https://picsum.photos/900/600",
+    "logoUrl": "https://picsum.photos/300",
+    "description": "Les Jeux olympiques d'été de 2024, officiellement appelés les Jeux de la XXXIIIᵉ olympiade, seront célébrés du 26 juillet au 11 août 2024 à Paris, en France. La ville est officiellement désignée lors de la 131ᵉ session du CIO à Lima, au Pérou, le 13 septembre 2017.",
+    "sponsors": ["Coca-Cola", "Pepsi"]
+  },
+  "sponsors": [
+    {
+      "name": "Nike",
+      "logoUrl": "https://example.com/nike_logo.png"
+    },
+    {
+      "name": "Adidas",
+      "logoUrl": "https://example.com/adidas_logo.png"
+    }
+  ],
+  "countries": [
+    {
+      "name": "France",
+      "flagUrl": "https://example.com/france_flag.png"
+    },
+    {
+      "name": "Germany",
+      "flagUrl": "https://example.com/germany_flag.png"
+    }
+  ],
+  "venues": [
+    {
+      "id": "venue1",
+      "name": "Wembley Stadium"
+    },
+    {
+      "id": "venue2",
+      "name": "Madison Square Garden"
+    }
+  ],
+  "events": [
+    {
+      "id": "event1",
+      "sport": "Football",
+      "schedule": "2024-07-20T18:00:00Z",
+      "venueId": "venue1",
+      "countries": ["France", "Germany"]
+    },
+    {
+      "id": "event2",
+      "sport": "Tennis",
+      "schedule": "2024-07-21T15:00:00Z",
+      "venueId": "venue2",
+      "countries": ["USA", "Spain"]
+    }
+  ]
+}

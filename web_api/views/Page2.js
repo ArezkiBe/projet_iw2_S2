@@ -11,7 +11,6 @@ class Page2 extends Component{
     this.state = {
       count: 0,
     };
-    this.rootElement = null;
   }
 
   setState(props) {
@@ -21,7 +20,6 @@ class Page2 extends Component{
   }
 
   updateDOM() {
-    //this.rootElement = this.renderCounter();
     const counterElement = this.renderCounter();
     let update = new CustomEvent("updateDOM", {
       detail: { id: "counter", element: counterElement },
@@ -35,7 +33,6 @@ class Page2 extends Component{
       type: "h1",
       attributes: {
         id: "counter",
-        class: "counter",
       },
       children: ["Counter: " + this.state.count],
     };
