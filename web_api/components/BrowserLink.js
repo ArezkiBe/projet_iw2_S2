@@ -6,6 +6,7 @@ class BrowserLink extends Component {
       type: "a",
       attributes: {
         href: this.props.props.path,
+        class: this.props.attributes.class,
       },
       events: {
         click: [function (e) {

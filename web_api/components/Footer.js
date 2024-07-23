@@ -1,19 +1,23 @@
 import { Component } from "../core/MiniReact.js";
+import BrowserLink from "./BrowserLink.js";
 
 class Footer extends Component {
   render() {
     return {
-      type: "body",
+      type: "div",
       attributes: {
         class: "flex flex-col justify-center items-center bg-black"
       },
       children: [
         {
-          type: "div",
+          type: BrowserLink,
           attributes: {
             class: "text-white underline mt-[32px] cursor-pointer"
           },
-          children: ["Contact"]
+          props: {
+            path: "/",
+            title: "Contact"
+          }
         },
         {
           type: "div",
