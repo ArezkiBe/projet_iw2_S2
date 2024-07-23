@@ -59,6 +59,7 @@ class Home extends Component{
           props: {
             bannerSrc: "https://picsum.photos/900/600",
             logoSrc: "https://picsum.photos/300",
+            showLogo: true,
           }
         },
         {

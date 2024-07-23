@@ -14,15 +14,18 @@ class BrowserRouter {
 
     window.addEventListener("popstate", async() => {
       this.rootElement.replaceChild(MiniReactDom.renderStructure(await managePath()), this.rootElement.childNodes[0]);
+      window.dispatchEvent(new Event("pageLoaded"));
     });
     window.addEventListener("pushstate", async() => {
       this.rootElement.replaceChild(MiniReactDom.renderStructure(await managePath()), this.rootElement.childNodes[0]);
+      window.dispatchEvent(new Event("pageLoaded"));
     });
     window.addEventListener("updateDOM", (e) => {
       this.updateElement(e.detail.id, e.detail.element);
     });
 
     this.rootElement.appendChild(MiniReactDom.renderStructure(await managePath()));
+    window.dispatchEvent(new Event("pageLoaded"));
   }
 
   async managePath () {
@@ -41,6 +44,8 @@ class BrowserRouter {
     if (oldElement && newElement) {
       oldElement.replaceWith(newElement);
     }
+
+    window.dispatchEvent(new Event("pageLoaded"));
   }
 }
 
