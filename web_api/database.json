@@ -1,11 +1,11 @@
 {
   "sports": [
     {
-      "id": "sport1",
+      "id": "1",
       "name": "Football",
       "description": "A team sport played with a spherical ball between two teams of eleven players.",
       "type": "Team",
-      "sponsors": ["Nike", "Adidas"],
+      "sponsors": ["1", "2", "4", "6"],
       "logoUrl": "https://example.com/football_logo.png",
       "bannerUrl": "https://example.com/football_banner.png"
     },
@@ -14,7 +14,7 @@
       "name": "Tennis",
       "description": "A racket sport that can be played individually against a single opponent or between two teams of two players each.",
       "type": "Individual",
-      "sponsors": ["Wilson", "Babolat"],
+      "sponsors": ["2", "4"],
       "logoUrl": "https://example.com/tennis_logo.png",
       "bannerUrl": "https://example.com/tennis_banner.png"
     }
@@ -24,10 +24,9 @@
       "id": "spot1",
       "name": "Central Stadium",
       "description": "A large stadium for various sports events.",
-      "rating": 4.5,
+      "rating": 4,
       "address": "123 Main St, City, Country",
-      "type": "Outdoor",
-      "sports": ["Football", "Athletics"],
+      "type": ["Outdoor"],
       "bannerUrl": "https://example.com/stadium_banner.png",
       "logoUrl": "https://example.com/stadium_logo.png",
       "events": ["event1", "event2"]
@@ -36,10 +35,9 @@
       "id": "spot2",
       "name": "Indoor Arena",
       "description": "An indoor arena suitable for various indoor sports.",
-      "rating": 4.2,
+      "rating": 4,
       "address": "456 Elm St, City, Country",
-      "type": "Indoor",
-      "sports": ["Basketball", "Volleyball"],
+      "type": ["Indoor"],
       "bannerUrl": "https://example.com/arena_banner.png",
       "logoUrl": "https://example.com/arena_logo.png",
       "events": ["event3", "event4"]
@@ -50,6 +48,9 @@
     "logoUrl": "https://picsum.photos/300",
     "description": "Les Jeux olympiques d'été de 2024, officiellement appelés les Jeux de la XXXIIIᵉ olympiade, seront célébrés du 26 juillet au 11 août 2024 à Paris, en France. La ville est officiellement désignée lors de la 131ᵉ session du CIO à Lima, au Pérou, le 13 septembre 2017.",
     "sponsors": ["Coca-Cola", "Pepsi"]
+  },
+  "spotsPage": {
+    "description": "Les Jeux olympiques d'été de 2024, officiellement appelés les Jeux de la XXXIIIᵉ olympiade, seront célébrés du 26 juillet au 11 août 2024 à Paris, en France. La ville est officiellement désignée lors de la 131ᵉ session du CIO à Lima, au Pérou, le 13 septembre 2017."
   },
   "sponsors": [
     {
@@ -87,6 +88,7 @@
       "sport": "Football",
       "schedule": "2024-07-20T18:00:00Z",
       "venueId": "venue1",
+      "categories": [""],
       "countries": ["France", "Germany"]
     },
     {
@@ -94,6 +96,7 @@
       "sport": "Tennis",
       "schedule": "2024-07-21T15:00:00Z",
       "venueId": "venue2",
+      "categories": [""],
       "countries": ["USA", "Spain"]
     }
   ]

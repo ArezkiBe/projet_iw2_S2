@@ -28,21 +28,21 @@ class Home extends Component{
         {
           type: "span",
           attributes: {
-            class: "text-sm font-title"
+            class: "text-sm font-texte"
           },
           children: [weekDay]
         },
         {
           type: "span",
           attributes: {
-            class: "text-sm"
+            class: "text-sm font-texte"
           },
           children: [day]
         },
         {
           type: "span",
           attributes: {
-            class: "text-sm"
+            class: "text-sm font-texte"
           },
           children: [Month]
         }
@@ -65,7 +65,7 @@ class Home extends Component{
         {
           type :"div",
           attributes : {
-            class: "mt-[7.188rem] flex justify-center items-center text-center px-[1.813rem]"
+            class: "mt-[7.188rem] flex justify-center items-center text-center px-[1.813rem] font-texte lg:text-[35px]"
           },
           children: [this.data.getMainPage().description],
         },
@@ -78,7 +78,7 @@ class Home extends Component{
             {
               type :"div",
               attributes : {
-                class: "mt-[3rem] text-center font-bold text-[2.5rem]"
+                class: "mt-[3rem] text-center font-bold md:text-[3.125rem] font-title"
               },
               children: ["Prochainement"],
             },
