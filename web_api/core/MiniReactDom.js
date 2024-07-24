@@ -44,8 +44,7 @@ const MiniReactDom = {
       }
       return elem;
     } else {
-      const type = structure.type;
-  
+      const type = structure.type;  
       const struct = new type(structure).render();
   
       return this.renderStructure(struct);
