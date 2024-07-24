@@ -1,9 +1,9 @@
 {
   "sports": [
     {
-      "id": "1",
+      "id": "sport1",
       "name": "Football",
-      "description": "A team sport played with a spherical ball between two teams of eleven players.",
+      "description": ["A team sport played with a spherical ball between two teams of eleven players."],
       "type": "Team",
       "sponsors": ["1", "2", "4", "6"],
       "logoUrl": "https://example.com/football_logo.png",
@@ -12,11 +12,24 @@
     {
       "id": "sport2",
       "name": "Tennis",
-      "description": "A racket sport that can be played individually against a single opponent or between two teams of two players each.",
+      "description": ["A racket sport that can be played individually against a single opponent or between two teams of two players each."],
       "type": "Individual",
       "sponsors": ["2", "4"],
       "logoUrl": "https://example.com/tennis_logo.png",
       "bannerUrl": "https://example.com/tennis_banner.png"
+    },
+    {
+      "id": "sport3",
+      "name": "Basket3x3",
+      "description":[
+        "Initialement, le basketball fut inventé pour permettre aux élèves de James W. Naismith, inventeur du sport, de garder la forme pendant l’hiver.",
+        "Ce professeur d’éducation physique au Centre de formation international YMCA de Springfield met au point, en décembre 1891, un sport en salle dont la plupart des règles sont toujours en vigueur aujourd’hui pour régir le fonctionnement du basketball.",
+        "Dans les années 1920, les premiers matchs internationaux sont disputés, et dans les années 1950 les premiers championnats du monde masculins et féminins sont organisés."
+      ],
+      "type": "Team",
+      "sponsors": ["3","4","5","6"],
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/basketBall.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
+      "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/bgBasketBall.svg?alt=media&token=a1341b3a-5ad7-4567-955a-2e2e7d47f002"
     }
   ],
   "spots": [
@@ -54,12 +67,34 @@
   },
   "sponsors": [
     {
+      "id": "1",
       "name": "Nike",
       "logoUrl": "https://example.com/nike_logo.png"
     },
     {
+      "id": "2",
       "name": "Adidas",
       "logoUrl": "https://example.com/adidas_logo.png"
+    },
+    {
+      "id": "3",
+      "name": "Apple",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/apple.svg?alt=media&token=a6961ee7-113c-4a4a-ae98-e08a079ec5f3"
+    },
+    {
+      "id": "4",
+      "name": "Uber",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/uber.svg?alt=media&token=e40cad77-5486-4e94-9e4e-1eee0061cc6a"
+    },
+    {
+      "id": "5",
+      "name": "Amazon",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/amazon.svg?alt=media&token=2a0b4c59-cc43-4f71-8d69-69f3034d4d47"
+    },
+    {
+      "id": "6",
+      "name": "Netflix",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/netflix.svg?alt=media&token=d0814886-1466-461d-9b18-cde3883599dc"
     }
   ],
   "countries": [
