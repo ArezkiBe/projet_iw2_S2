@@ -49,14 +49,14 @@ class Banner extends Component {
         {
           type: "div",
           attributes: {
-            class: "absolute left-1/2 transform -translate-x-1/2 -bottom-[75px] w-[150px] h-[150px] rounded-full bg-white flex items-center justify-center shadow-xl",
+            class: "absolute left-1/2 transform -translate-x-1/2 -bottom-[75px] lg:-bottom-[56.8px] w-[150px] h-[150px] lg:w-[213px] lg:h-[213px] rounded-full bg-white flex items-center justify-center shadow-xl",
             // style: "background-image: url(" + this.props.attributes.src + ");",
           },
           children: [
             {
               type: "img",
               attributes: {
-                class: "object-cover object-center w-[100px] h-[100px] rounded-full",
+                class: "object-cover object-center w-[100px] h-[100px] lg:w-[157.2px] lg:h-[71.48px] rounded-full",
                 src: this.props.props.logoSrc,
               },
             }

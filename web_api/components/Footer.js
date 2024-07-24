@@ -12,7 +12,7 @@ class Footer extends Component {
         {
           type: BrowserLink,
           attributes: {
-            class: "text-white underline mt-[32px] cursor-pointer"
+            class: "text-white lg:text-[35.5px] underline mt-[32px] lg:mt-[45.44px] cursor-pointer"
           },
           props: {
             path: "/",
@@ -22,21 +22,21 @@ class Footer extends Component {
         {
           type: "div",
           attributes: {
-            class: "text-white underline mt-[32px] cursor-pointer"
+            class: "text-white lg:text-[35.5px] underline mt-[32px] lg:mt-[45.44px]  cursor-pointer"
           },
           children: ["A propos"]
         },
         {
           type: "div",
           attributes: {
-            class: "text-white mt-[40px]"
+            class: "text-white lg:text-[35.5px] mt-[40px] lg:mt-[45.44px] "
           },
           children: ["Suivez-nous sur"]
         },
         {
           type: "div",
           attributes: {
-            class: "flex justify-center items-center mt-[32px] space-x-[25px] mb-[45px]"
+            class: "flex justify-center items-center mt-[32px] lg:mt-[53.96px] space-x-[25px] lg:space-x-[56.8px] mb-[45px] lg:mb-[53.96px]"
           },
           children: [
             {
@@ -44,7 +44,7 @@ class Footer extends Component {
               attributes: {
                 src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/X.svg?alt=media&token=8562ff5e-1eb1-4e56-99e4-ca74bfc6d791",
                 alt: "",
-                class: "cursor-pointer"
+                class: "cursor-pointer lg:w-[56.8px] lg:h-[56.8px]"
               }
             },
             {
@@ -52,7 +52,7 @@ class Footer extends Component {
               attributes: {
                 src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/facebook.svg?alt=media&token=8562ff5e-1eb1-4e56-99e4-ca74bfc6d791",
                 alt: "",
-                class: "cursor-pointer"
+                class: "cursor-pointer lg:w-[56.8px] lg:h-[56.8px]"
               }
             },
             {
@@ -60,7 +60,7 @@ class Footer extends Component {
               attributes: {
                 src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/linkedin.svg?alt=media&token=8562ff5e-1eb1-4e56-99e4-ca74bfc6d791",
                 alt: "",
-                class: "cursor-pointer"
+                class: "cursor-pointer lg:w-[56.8px] lg:h-[56.8px]"
               }
             },
             {
@@ -68,7 +68,7 @@ class Footer extends Component {
               attributes: {
                 src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/instagram.svg?alt=media&token=8562ff5e-1eb1-4e56-99e4-ca74bfc6d791",
                 alt: "",
-                class: "cursor-pointer"
+                class: "cursor-pointer lg:w-[56.8px] lg:h-[56.8px]"
               }
             },
             {
@@ -76,7 +76,7 @@ class Footer extends Component {
               attributes: {
                 src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/tikTok.svg?alt=media&token=8562ff5e-1eb1-4e56-99e4-ca74bfc6d791",
                 alt: "",
-                class: "cursor-pointer"
+                class: "cursor-pointer lg:w-[56.8px] lg:h-[56.8px]"
               }
             }
           ]

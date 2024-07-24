@@ -31,20 +31,20 @@ class Spots extends Component{
         {
           type: "div",
           attributes: {
-            class: "mt-[54px]"
+            class: "mt-[54px] lg:mt-[102.24px]"
           },
           children: [
             {
               type :"div",
               attributes : {
-                class: "text-center font-bold text-[2.5rem]"
+                class: "text-center font-bold text-[2.5rem] lg:text-[56.8px]"
               },
               children: ["Spots"],
             },
             {
               type :"div",
               attributes : {
-                class: "mt-[24px] flex justify-center items-center text-center px-[1.813rem]"
+                class: "mt-[24px] lg:mt-[56.8px] flex justify-center items-center text-center lg:text-[35.5px] px-[1.813rem]"
               },
               children: [this.data.getMainPage().description],
             },
@@ -62,7 +62,7 @@ class Spots extends Component{
     return {
       type: "div",
       attributes: {
-        class: "w-full overflow-x-auto no-scrollbar mt-[54px] mb-[24px]"
+        class: "w-full overflow-x-auto no-scrollbar mt-[54px] lg:mt-[102.24px] mb-[24px]"
       },
       children: [
         {
@@ -74,7 +74,7 @@ class Spots extends Component{
             {
               type: Button,
               attributes: {
-                class: "flex-shrink-0 w-24 h-7 bg-blue-500 text-white rounded-xl"
+                class: "flex-shrink-0 w-24 h-7 bg-[#D9D9D9] lg:text-[35.5px] rounded-[0.625rem] lg:w-[248.5px] lg:h-[56.8px]"
               },
               events : {
                 click: () => ""
@@ -86,7 +86,7 @@ class Spots extends Component{
             {
               type: Button,
               attributes: {
-                class: "flex-shrink-0 w-24 h-7 bg-blue-500 text-white rounded-xl"
+                class: "flex-shrink-0 w-24 h-7 bg-[#D9D9D9] lg:text-[35.5px] rounded-[0.625rem] lg:w-[248.5px] lg:h-[56.8px]"
               },
               events : {
                 click: () => ""
@@ -99,7 +99,7 @@ class Spots extends Component{
             {
               type: Button,
               attributes: {
-                class: "flex-shrink-0 w-24 h-7 bg-blue-500 text-white rounded-xl"
+                class: "flex-shrink-0 w-24 h-7 bg-[#D9D9D9] lg:text-[35.5px] rounded-[0.625rem] lg:w-[248.5px] lg:h-[56.8px]"
               },
               events : {
                 click: () => ""
@@ -111,7 +111,7 @@ class Spots extends Component{
             {
               type: Button,
               attributes: {
-                class: "flex-shrink-0 w-24 h-7 bg-blue-500 text-white rounded-xl"
+                class: "flex-shrink-0 w-24 h-7 bg-[#D9D9D9] lg:text-[35.5px] rounded-[0.625rem] lg:w-[248.5px] lg:h-[56.8px]"
               },
               events : {
                 click: () => ""
@@ -123,7 +123,7 @@ class Spots extends Component{
             {
               type: Button,
               attributes: {
-                class: "flex-shrink-0 w-24 h-7 bg-blue-500 text-white rounded-xl"
+                class: "flex-shrink-0 w-24 h-7 bg-[#D9D9D9] lg:text-[35.5px] rounded-[0.625rem] lg:w-[248.5px] lg:h-[56.8px]"
               },
               events : {
                 click: () => ""
@@ -135,7 +135,7 @@ class Spots extends Component{
             {
               type: Button,
               attributes: {
-                class: "flex-shrink-0 w-24 h-7 bg-blue-500 text-white rounded-xl"
+                class: "flex-shrink-0 w-24 h-7 bg-[#D9D9D9] lg:text-[35.5px] rounded-[0.625rem] lg:w-[248.5px] lg:h-[56.8px]"
               },
               events : {
                 click: () => ""
@@ -147,7 +147,7 @@ class Spots extends Component{
             {
               type: Button,
               attributes: {
-                class: "flex-shrink-0 w-24 h-7 bg-blue-500 text-white rounded-xl"
+                class: "flex-shrink-0 w-24 h-7 bg-[#D9D9D9] lg:text-[35.5px] rounded-[0.625rem] lg:w-[248.5px] lg:h-[56.8px]"
               },
               events : {
                 click: () => ""
@@ -167,7 +167,7 @@ class Spots extends Component{
     return {
       type: "div",
       attributes: {
-        class: "flex justify-center items-center border-t-2 ml-4 mr-[13px]"
+        class: "flex justify-center items-center border-t-2 ml-4 mr-[13px] lg:mt-[102.24px]"
       },
       children: [
         {
@@ -179,14 +179,14 @@ class Spots extends Component{
             {
               type: "div",
               attributes: {
-                class: "font-bold text-center my-[10px]"
+                class: "font-bold text-center lg:text-[45.44px] my-[10px]"
               },
               children: ["LA CONCORDE"]
             },
             {
               type: "div",
               attributes: {
-                class: "flex items-center bg-white"
+                class: "flex items-center bg-white space-x-20 lg:w-[937.2px] lg:h-[357.84px]"
               },
               children: [
                 {
@@ -194,7 +194,7 @@ class Spots extends Component{
                   attributes: {
                     src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/concorde.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                     alt: "La Concorde",
-                    class: "w-[102px] h-[102px] rounded-md"
+                    class: "w-[102px] lg:w-[213px] h-[102px] lg:h-[213px] rounded-md"
                   }
                 },
                 {
@@ -206,14 +206,14 @@ class Spots extends Component{
                     {
                       type: "div",
                       attributes: {
-                        class: "font-semibold text-[11px] opacity-50 w-[119px] text-center"
+                        class: "font-semibold text-[11px] lg:text-[35.5px] opacity-50 text-center"
                       },
                       children: ["Place de la Madeleine 75008 Paris"]
                     },
                     {
                       type: "div",
                       attributes: {
-                        class: "flex justify-center items-center space-x-2 mt-[10px]"
+                        class: "flex justify-center items-center space-x-10 mt-[10px]"
                       },
                       children: [
                         {
@@ -221,7 +221,7 @@ class Spots extends Component{
                           attributes: {
                             src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/basketBall.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                             alt: "",
-                            class: "w-[30px] h-[30px]"
+                            class: "w-[30px] lg:w-[78.1px] h-[30px] lg:h-[84.49px]"
                           }
                         },
                         {
@@ -229,7 +229,7 @@ class Spots extends Component{
                           attributes: {
                             src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/archery.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                             alt: "",
-                            class: "w-[30px] h-[30px]"
+                            class: "w-[30px] lg:w-[78.1px] h-[30px] lg:h-[84.49px]"
                           }
                         },
                         {
@@ -237,7 +237,7 @@ class Spots extends Component{
                           attributes: {
                             src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/pingPong.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                             alt: "",
-                            class: "w-[30px] h-[30px]"
+                            class: "w-[30px] lg:w-[78.1px] h-[30px] lg:h-[84.49px]"
                           }
                         }
                       ]
@@ -247,7 +247,7 @@ class Spots extends Component{
                 {
                   type: "div",
                   attributes: {
-                    class: "border-l-2 border-gray-300 h-[100px] ml-4 mr-2"
+                    class: "border-l-2 border-gray-300 h-[100px] lg:h-[168.27px] ml-4 mr-2"
                   }
                 },
                 {
@@ -259,7 +259,7 @@ class Spots extends Component{
                     {
                       type: Button,
                       attributes: {
-                        class: "bg-red-500 text-white px-4 py-2 rounded-full cursor-pointer"
+                        class: "bg-red-500 text-white lg:text-[35.5px] lg:w-[213.71px] lg:h-[95.14px] px-4 py-2 rounded-[14.2px] cursor-pointer"
                       },
                       events : {
                         click: () => ""
@@ -279,7 +279,7 @@ class Spots extends Component{
                           attributes: {
                             src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/full_star.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                             alt: "",
-                            class: "w-[15px] h-[14px]"
+                            class: "w-[15px] lg:w-[35.5px] h-[14px] lg:h-[42.6px]"
                           }
                         },
                         {
@@ -287,7 +287,7 @@ class Spots extends Component{
                           attributes: {
                             src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/full_star.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                             alt: "",
-                            class: "w-[15px] h-[14px]"
+                            class: "w-[15px] lg:w-[35.5px] h-[14px] lg:h-[42.6px]"
                           }
                         },
                         {
@@ -295,7 +295,7 @@ class Spots extends Component{
                           attributes: {
                             src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/empty_star.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                             alt: "",
-                            class: "w-[15px] h-[14px]"
+                            class: "w-[15px] lg:w-[35.5px] h-[14px] lg:h-[42.6px]"
                           }
                         },
                         {
@@ -303,7 +303,7 @@ class Spots extends Component{
                           attributes: {
                             src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/empty_star.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                             alt: "",
-                            class: "w-[15px] h-[14px]"
+                            class: "w-[15px] lg:w-[35.5px] h-[14px] lg:h-[42.6px]"
                           }
                         },
                         {
@@ -311,7 +311,7 @@ class Spots extends Component{
                           attributes: {
                             src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/empty_star.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662",
                             alt: "",
-                            class: "w-[15px] h-[14px]"
+                            class: "w-[15px] lg:w-[35.5px] h-[14px] lg:h-[42.6px]"
                           }
                         }
                       ]
