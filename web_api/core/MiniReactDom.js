@@ -15,8 +15,6 @@ const MiniReactDom = {
             elem.dataset[propName.slice(4).toLowerCase()] =
               structure.props[propName];
           } else if (propName === "style") {
-            console.log(elem.style);
-            console.log(structure.props[propName]);
             Object.assign(elem.style, structure.props[propName]);
           }
         }
@@ -46,7 +44,7 @@ const MiniReactDom = {
       }
       return elem;
     } else {
-      const type = structure.type;  
+      const type = structure.type;
       const struct = new type(structure).render();
   
       return this.renderStructure(struct);

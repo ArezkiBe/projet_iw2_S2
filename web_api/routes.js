@@ -12,8 +12,10 @@ import Calendrier from "./views/Calendrier.js";
 export default {
   "/" : Home,
   "/jeu": Jeu,
+  "/jeux": Jeux,
   "/page2": Page2,
   "/map": MapPage,
+  "/spot": Spot,
   "/spots": Spots,
   "*": MapPage,
 };

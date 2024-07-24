@@ -8,7 +8,7 @@ class Jeu extends Component {
     return {
       type: "div",
       children: [
-        new Navbar().render(),
+        //new Navbar().render(),
         {
           type: Banner,
           props: {
@@ -134,7 +134,9 @@ class Jeu extends Component {
             },
           ],
         },
-        new Footer().render(),
+        {
+          type: Footer,
+        }
       ],
     };
   }

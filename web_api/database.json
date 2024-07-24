@@ -1,22 +1,35 @@
 {
   "sports": [
     {
-      "id": "1",
+      "id": "sport1",
       "name": "Football",
-      "description": "A team sport played with a spherical ball between two teams of eleven players.",
+      "description": ["A team sport played with a spherical ball between two teams of eleven players."],
       "type": "Team",
       "sponsors": ["1", "2", "4", "6"],
-      "logoUrl": "https://example.com/football_logo.png",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/badMinton.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
       "bannerUrl": "https://example.com/football_banner.png"
     },
     {
       "id": "sport2",
       "name": "Tennis",
-      "description": "A racket sport that can be played individually against a single opponent or between two teams of two players each.",
+      "description": ["A racket sport that can be played individually against a single opponent or between two teams of two players each."],
       "type": "Individual",
       "sponsors": ["2", "4"],
-      "logoUrl": "https://example.com/tennis_logo.png",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/archery.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
       "bannerUrl": "https://example.com/tennis_banner.png"
+    },
+    {
+      "id": "sport3",
+      "name": "Basket3x3",
+      "description":[
+        "Initialement, le basketball fut inventé pour permettre aux élèves de James W. Naismith, inventeur du sport, de garder la forme pendant l’hiver.",
+        "Ce professeur d’éducation physique au Centre de formation international YMCA de Springfield met au point, en décembre 1891, un sport en salle dont la plupart des règles sont toujours en vigueur aujourd’hui pour régir le fonctionnement du basketball.",
+        "Dans les années 1920, les premiers matchs internationaux sont disputés, et dans les années 1950 les premiers championnats du monde masculins et féminins sont organisés."
+      ],
+      "type": "Team",
+      "sponsors": ["3","4","5","6"],
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/basketBall.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
+      "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/bgBasketBall.svg?alt=media&token=a1341b3a-5ad7-4567-955a-2e2e7d47f002"
     }
   ],
   "spots": [
@@ -29,37 +42,136 @@
       "type": ["Outdoor"],
       "bannerUrl": "https://example.com/stadium_banner.png",
       "logoUrl": "https://example.com/stadium_logo.png",
-      "events": ["event1", "event2"]
+      "events": ["event1"]
     },
     {
       "id": "spot2",
-      "name": "Indoor Arena",
-      "description": "An indoor arena suitable for various indoor sports.",
+      "name": "Aquatic Center",
+      "description": "A facility for swimming and diving events.",
+      "rating": 5,
+      "address": "456 Ocean Dr, City, Country",
+      "type": ["Indoor", "Swimming"],
+      "bannerUrl": "https://example.com/aquatic_banner.png",
+      "logoUrl": "https://example.com/aquatic_logo.png",
+      "events": ["event2"]
+    },
+    {
+      "id": "spot3",
+      "name": "Green Park Arena",
+      "description": "A versatile venue for sports and concerts.",
+      "rating": 3,
+      "address": "789 Park Ave, City, Country",
+      "type": ["Indoor", "Outdoor"],
+      "bannerUrl": "https://example.com/greenpark_banner.png",
+      "logoUrl": "https://example.com/greenpark_logo.png",
+      "events": ["event3"]
+    },
+    {
+      "id": "spot4",
+      "name": "City Sports Complex",
+      "description": "A complex for various indoor sports.",
       "rating": 4,
-      "address": "456 Elm St, City, Country",
+      "address": "101 City Rd, City, Country",
       "type": ["Indoor"],
-      "bannerUrl": "https://example.com/arena_banner.png",
-      "logoUrl": "https://example.com/arena_logo.png",
-      "events": ["event3", "event4"]
+      "bannerUrl": "https://example.com/sportscomplex_banner.png",
+      "logoUrl": "https://example.com/sportscomplex_logo.png",
+      "events": ["event4"]
+    },
+    {
+      "id": "spot5",
+      "name": "Mountain Bike Trail",
+      "description": "A challenging trail for mountain biking.",
+      "rating": 5,
+      "address": "202 Trail Ln, Mountain Town, Country",
+      "type": ["Outdoor", "Cycling"],
+      "bannerUrl": "https://example.com/biketrail_banner.png",
+      "logoUrl": "https://example.com/biketrail_logo.png",
+      "events": ["event5"]
+    },
+    {
+      "id": "spot6",
+      "name": "National Equestrian Center",
+      "description": "A premier venue for equestrian sports.",
+      "rating": 4,
+      "address": "303 Horse Rd, City, Country",
+      "type": ["Outdoor", "Equestrian"],
+      "bannerUrl": "https://example.com/equestrian_banner.png",
+      "logoUrl": "https://example.com/equestrian_logo.png",
+      "events": ["event6"]
+    },
+    {
+      "id": "spot7",
+      "name": "Urban Skate Park",
+      "description": "A modern park for skateboarding and BMX.",
+      "rating": 3,
+      "address": "404 Skate St, City, Country",
+      "type": ["Outdoor", "Skating"],
+      "bannerUrl": "https://example.com/skatepark_banner.png",
+      "logoUrl": "https://example.com/skatepark_logo.png",
+      "events": ["event7"]
+    },
+    {
+      "id": "spot8",
+      "name": "City Tennis Club",
+      "description": "A club for professional and amateur tennis.",
+      "rating": 5,
+      "address": "505 Tennis Dr, City, Country",
+      "type": ["Outdoor", "Indoor", "Tennis"],
+      "bannerUrl": "https://example.com/tennisclub_banner.png",
+      "logoUrl": "https://example.com/tennisclub_logo.png",
+      "events": ["event8"]
+    },
+    {
+      "id": "spot9",
+      "name": "Olympic Gymnastics Hall",
+      "description": "A world-class facility for gymnastics competitions.",
+      "rating": 5,
+      "address": "606 Gym Rd, City, Country",
+      "type": ["Indoor", "Gymnastics"],
+      "bannerUrl": "https://example.com/gymnastics_banner.png",
+      "logoUrl": "https://example.com/gymnastics_logo.png",
+      "events": ["event9"]
     }
   ],
   "mainPage": {
-    "bannerUrl": "https://picsum.photos/900/600",
+    "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/mainBanner.svg?alt=media&token=7a54decf-bfb5-480b-b214-a81753b3a8b7",
     "logoUrl": "https://picsum.photos/300",
     "description": "Les Jeux olympiques d'été de 2024, officiellement appelés les Jeux de la XXXIIIᵉ olympiade, seront célébrés du 26 juillet au 11 août 2024 à Paris, en France. La ville est officiellement désignée lors de la 131ᵉ session du CIO à Lima, au Pérou, le 13 septembre 2017.",
-    "sponsors": ["Coca-Cola", "Pepsi"]
+    "sponsors": ["3", "5", "4", "6"]
   },
   "spotsPage": {
     "description": "Les Jeux olympiques d'été de 2024, officiellement appelés les Jeux de la XXXIIIᵉ olympiade, seront célébrés du 26 juillet au 11 août 2024 à Paris, en France. La ville est officiellement désignée lors de la 131ᵉ session du CIO à Lima, au Pérou, le 13 septembre 2017."
   },
   "sponsors": [
     {
+      "id": "1",
       "name": "Nike",
       "logoUrl": "https://example.com/nike_logo.png"
     },
     {
+      "id": "2",
       "name": "Adidas",
       "logoUrl": "https://example.com/adidas_logo.png"
+    },
+    {
+      "id": "3",
+      "name": "Apple",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/apple.svg?alt=media&token=a6961ee7-113c-4a4a-ae98-e08a079ec5f3"
+    },
+    {
+      "id": "4",
+      "name": "Uber",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/uber.svg?alt=media&token=e40cad77-5486-4e94-9e4e-1eee0061cc6a"
+    },
+    {
+      "id": "5",
+      "name": "Amazon",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/amazon.svg?alt=media&token=2a0b4c59-cc43-4f71-8d69-69f3034d4d47"
+    },
+    {
+      "id": "6",
+      "name": "Netflix",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/netflix.svg?alt=media&token=d0814886-1466-461d-9b18-cde3883599dc"
     }
   ],
   "countries": [
@@ -86,18 +198,65 @@
     {
       "id": "event1",
       "sport": "Football",
-      "schedule": "2024-07-20T18:00:00Z",
-      "venueId": "venue1",
-      "categories": [""],
+      "schedule": "2024-07-24T18:00:00Z",
+      "categories": ["Professional"],
       "countries": ["France", "Germany"]
     },
     {
       "id": "event2",
+      "sport": "Swimming",
+      "schedule": "2024-07-24T15:00:00Z",
+      "categories": ["International"],
+      "countries": ["USA", "Australia"]
+    },
+    {
+      "id": "event3",
+      "sport": "Concert",
+      "schedule": "2024-07-24T20:00:00Z",
+      "categories": ["Music"],
+      "countries": ["UK", "Canada"]
+    },
+    {
+      "id": "event4",
+      "sport": "Basketball",
+      "schedule": "2024-07-25T19:00:00Z",
+      "categories": ["Professional"],
+      "countries": ["Spain", "Argentina"]
+    },
+    {
+      "id": "event5",
+      "sport": "Mountain Biking",
+      "schedule": "2024-07-26T09:00:00Z",
+      "categories": ["Extreme"],
+      "countries": ["Italy", "Switzerland"]
+    },
+    {
+      "id": "event6",
+      "sport": "Equestrian",
+      "schedule": "2024-07-26T11:00:00Z",
+      "categories": ["Professional"],
+      "countries": ["UK", "Australia"]
+    },
+    {
+      "id": "event7",
+      "sport": "Skateboarding",
+      "schedule": "2024-07-26T10:00:00Z",
+      "categories": ["Youth"],
+      "countries": ["Japan", "Brazil"]
+    },
+    {
+      "id": "event8",
       "sport": "Tennis",
-      "schedule": "2024-07-21T15:00:00Z",
-      "venueId": "venue2",
-      "categories": [""],
-      "countries": ["USA", "Spain"]
+      "schedule": "2024-07-25T14:00:00Z",
+      "categories": ["Grand Slam"],
+      "countries": ["Serbia", "Russia"]
+    },
+    {
+      "id": "event9",
+      "sport": "Gymnastics",
+      "schedule": "2024-07-25T17:00:00Z",
+      "categories": ["Olympics"],
+      "countries": ["China", "USA"]
     }
   ]
 }

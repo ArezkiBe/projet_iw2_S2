@@ -5,7 +5,6 @@ class BrowserRouter {
   constructor(rootElement, routes) {
     this.rootElement = rootElement;
     this.routes = routes;
-    
     this.init();
   }
 
