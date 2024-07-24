@@ -60,6 +60,21 @@ class Data {
   getEventById(id) {
     return this.data ? this.data.events.find(event => event.id === id) : null;
   }
+
+  getSportEvents() {
+    return [
+      { 
+        icon: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/athletism.svg?alt=media&token=8562ff5e-1eb1-4e56-99e4-ca74bfc6d791", 
+        title: "Athlétisme", 
+        times: "9h30 - 12h : Course de 100m\n 15H - 17h : Saut de haies"
+      },
+      { 
+        icon: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/badMinton.svg?alt=media&token=8562ff5e-1eb1-4e56-99e4-ca74bfc6d791", 
+        title: "Badminton", 
+        times: "9h30 - 12h : Course de 100m\n 15H - 17h : Saut de haies"
+      }
+    ];
+  }
 }
 
 export default Data;
