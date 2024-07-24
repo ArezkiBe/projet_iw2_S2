@@ -16,5 +16,6 @@ export default {
   "/spot": Spot,
   "/page2": Page2,
   "/map": MapPage,
+  "/spots": Spots,
   "*": MapPage,
 };

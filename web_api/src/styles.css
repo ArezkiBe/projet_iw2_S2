@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'texte';
+  src: url('./fonts/Paris2024-Variable.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'title';
+  src: url('./fonts/OlympicHeadline-Regular.ttf') format('opentype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
