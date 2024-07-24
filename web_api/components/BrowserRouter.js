@@ -31,9 +31,19 @@ class BrowserRouter {
     const data = new Data();
     await data.fetchData();
     const currentPath = window.location.pathname;
+    const queryParams = this.getQueryParams();
     const elementGenerator = this.routes[currentPath] ?? this.routes["*"];
-    let elem = new elementGenerator(data).render();
+    let elem = new elementGenerator({...data, ...queryParams}).render();
     return elem;
+  }
+
+  getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    const queryParams = {};
+    for (const [key, value] of params.entries()) {
+      queryParams[key] = value;
+    }
+    return queryParams;
   }
 
   updateElement(id, newElementStructure) {
