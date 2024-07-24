@@ -6,12 +6,13 @@ import Home from "./views/Home.js";
 import Spots from "./views/Spots.js";
 import MapPage from "./views/MapPage.js";
 import Jeu from "./views/Jeu.js";
+import Calendar from "./views/Calendar.js";
 import Jeux from "./views/Jeux.js";
-import Calendrier from "./views/Calendrier.js";
 
 export default {
   "/" : Home,
   "/jeu": Jeu,
+  "/calendar": Calendar,
   "/page2": Page2,
   "/map": MapPage,
   "/spots": Spots,

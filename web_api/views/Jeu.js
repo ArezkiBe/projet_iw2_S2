@@ -8,12 +8,13 @@ class Jeu extends Component {
     return {
       type: "div",
       children: [
-        new Navbar().render(),
+        //new Navbar().render(),
         {
           type: Banner,
           props: {
             bannerSrc: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/bgBasketBall.svg?alt=media&token=a1341b3a-5ad7-4567-955a-2e2e7d47f002",
             logoSrc: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/basketBall.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
+            showLogo: true,
           }
         },
         {
