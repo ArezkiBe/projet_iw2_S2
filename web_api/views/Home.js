@@ -12,10 +12,10 @@ import Footer from "../components/Footer.js";
 class Home extends Component{
 
 
-  constructor(data) {
+  constructor(props) {
     super();
-    this.data = data;
-    this.mainPageData = data.getMainPage();
+    this.data = props.data;
+    this.mainPageData = this.data.getMainPage();
     this.days = [];
     this.spots = [];
     this.sponsors = [];
@@ -32,7 +32,6 @@ class Home extends Component{
   initSports() {
     const sports = this.data.getSports();
     this.sports = sports;
-    console.log(this.data.getSports());
   }
 
   initSponsors() {
@@ -235,7 +234,6 @@ class Home extends Component{
 
 
   renderSport(sport) {
-    console.log(sport);
     return {
       type: "img",
       attributes: {

@@ -33,7 +33,7 @@ class BrowserRouter {
     const currentPath = window.location.pathname;
     const queryParams = this.getQueryParams();
     const elementGenerator = this.routes[currentPath] ?? this.routes["*"];
-    let elem = new elementGenerator({...data, ...queryParams}).render();
+    let elem = new elementGenerator({data, ...queryParams}).render();
     return elem;
   }
 

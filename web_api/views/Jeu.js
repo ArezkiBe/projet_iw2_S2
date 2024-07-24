@@ -12,10 +12,10 @@ class Jeu extends Component {
     this.data = props.data;
 
     const sportId = this.props.id;
-    const sport = this.data.sports.find(s => s.id === sportId);
+    const sport = this.data.getSports().find(s => s.id === sportId);
     this.state.sport = sport;
 
-    const sponsors = sport.sponsors.map(sponsorId => this.data.sponsors.find(s => s.id === sponsorId));
+    const sponsors = sport.sponsors.map(sponsorId => this.data.getSponsors().find(s => s.id === sponsorId));
     this.state.sponsors = sponsors;
   }
 
