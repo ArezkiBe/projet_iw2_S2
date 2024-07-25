@@ -17,6 +17,97 @@ class Jeu extends Component {
 
     const sponsors = sport.sponsors.map(sponsorId => this.data.getSponsors().find(s => s.id === sponsorId));
     this.state.sponsors = sponsors;
+
+    this.days = []
+    this.events =[]
+    this.selectedDay = 0;
+    this.initDays();
+    this.initEvents();
+  }
+
+  initDays() {
+    let now = new Date();
+    let tomorrow = new Date().addDays(1);
+    let afterTomorrow = new Date().addDays(2);
+    const days = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+    const months = ['Jan', 'Fev', 'Mars', 'Avr', 'Mai', 'Jui', 'Jui', 'Août', 'Sept', 'Oct', 'Nov', 'Dec'];
+    
+    
+    this.days = [
+      {
+        day: days[ now.getDay() ],
+        date: now.getDate(),
+        month: months[ now.getMonth() ],
+        fullDate: now.toISOString().split('T')[0]
+      },
+      {
+        day: days[ tomorrow.getDay() ],
+        date: tomorrow.getDate(),
+        month: months[ tomorrow.getMonth() ],
+        fullDate: tomorrow.toISOString().split('T')[0]
+      },
+      {
+        day: days[ afterTomorrow.getDay() ],
+        date: afterTomorrow.getDate(),
+        month: months[ afterTomorrow.getMonth() ],
+        fullDate: afterTomorrow.toISOString().split('T')[0]
+      },
+    ]
+  }
+
+
+  initEvents() {
+    let events = this.data.getEvents();
+    events = events.filter(event => event.sport === this.state.sport.id);
+
+    const getDateStr = (offset) => {
+      const date = new Date();
+      date.setDate(date.getDate() + offset);
+      return date.toISOString().split('T')[0];
+    };
+
+    const today = getDateStr(0);
+    const tomorrow = getDateStr(1);
+    const dayAfterTomorrow = getDateStr(2);
+
+    const isEventOnDate = (event, date) => {
+      return new Date(event.schedule).toISOString().split('T')[0] === date;
+    };
+
+    this.events = [ today, tomorrow, dayAfterTomorrow ].map(date => {
+      return events.filter(event => isEventOnDate(event, date));
+    });
+  }
+
+
+  getCountryInfo(countryNames) {
+    return countryNames.map(countryName => this.data.getCountries().find(country => country.name === countryName));
+  }
+  
+
+  setDay (position) {
+    if (this.selectedDay !== position) {
+      this.selectedDay = position
+      
+    } else {
+      return;
+    }
+    this.updateCalendar()
+  }
+
+  updateCalendar() {
+    const element = this.renderCalendar();
+    const eventsElement = this.renderEvents();
+
+    let update = new CustomEvent("updateDOM", {
+      detail: { id: "calendar", element: element },
+    });
+    let eventsUpdate = new CustomEvent("updateDOM", {
+      detail: { id: "events", element: eventsElement },
+    });
+
+    window.dispatchEvent(update);
+    window.dispatchEvent(eventsUpdate);
   }
 
   render() {
@@ -46,7 +137,7 @@ class Jeu extends Component {
                   attributes: {
                     class: "text-[40px] font-bold pb-[8px] mt-[107px] font-title",
                   },
-                  children: this.state.sport.name,
+                  children: [this.state.sport.name],
                 },
                 {
                   type: "div",
@@ -78,36 +169,22 @@ class Jeu extends Component {
                 },
                 {
                   type: "div",
-                  attributes: {
-                    class: "flex justify-center mt-[1rem] lg:mt-[28.4px]"
-                  },
-                  children: [
-                    {
-                      type: "div",
-                      attributes: {
-                        class: "flex space-x-6 lg:space-x-20"
+                    attributes: {
+                      class: "flex justify-center items-center my-[2.5rem]"
+                    },
+                    children: [
+                      {
+                        type: "div",
+                        attributes: {
+                          class: "flex space-x-6"
+                        },
+                        children: [this.renderCalendar()],
                       },
-                      children: [
-                        this.renderCalendarDay("Sam", "29", "Juin"),
-                        this.renderCalendarDay("Dim", "30", "Juin"),
-                        this.renderCalendarDay("Lun", "1", "Jui"),
-                      ]
-                    }
-                    
-                  ]
-                },
+                    ]
+                  },
               ],
             },
-            {
-              type: "div",
-              attributes: {
-                class: "mt-8 justify-center px-[14px] font-texte text-[16px]",
-              },
-              children: [
-                this.renderMatch("19H", "HOMMES ELIMINATOIRES - GROUPE D", "ETATS UNIS", "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsUsa.svg?alt=media&token=99d9dbd0-c2f8-41ef-bf10-8ec5fc51071a", "JAMAIQUE", "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsJamaique.svg?alt=media&token=360c454e-421f-4ced-88c7-a17a4fda056d"),
-                this.renderMatch("17H", "HOMMES ELIMINATOIRES - GROUPE D", "GRECE", "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsGrece.svg?alt=media&token=0f368089-d15f-4069-bd39-87db2e8559e8", "POLOGNE", "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsPologne.svg?alt=media&token=f2c45e67-9e40-4788-a566-33fcf0df68ec"),
-              ],
-            },
+            this.renderEvents(),
             {
               type: "div",
               attributes: {
@@ -139,37 +216,106 @@ class Jeu extends Component {
     };
   }
 
-  renderCalendarDay(weekDay, day, Month) {
+  renderCalendar() {
     return {
       type: "div",
       attributes: {
-        class: "flex flex-col items-center justify-around w-[5.625rem] lg:w-[272.6px] h-[3.75rem] lg:h-[106.5px] bg-orange-500 rounded-md"
+        class: "flex space-x-6",
+        id: "calendar"
+      },
+      children: [
+        this.renderCalendarDay(this.days[0].day, this.days[0].date.toString(), this.days[0].month, 0),
+        this.renderCalendarDay(this.days[1].day, this.days[1].date.toString(), this.days[1].month, 1),
+        this.renderCalendarDay(this.days[2].day, this.days[2].date.toString(), this.days[2].month, 2),
+      ],
+    }
+  }
+
+  renderCalendarDay(weekDay, day, Month, position) {
+    return {
+      type: "div",
+      attributes: {
+        class: "flex flex-col items-center justify-center w-[5.625rem] h-[3.75rem] rounded-md " + (this.selectedDay === position ? "bg-[#F79E1B]" : "bg-[#DBC9C9]"),
+      },
+      events: {
+        click: [function () {
+          this.setDay(position);
+        }.bind(this)],
       },
       children: [
         {
           type: "span",
           attributes: {
-            class: "text-sm lg:text-[28.4px] font-texte"
+            class: "text-sm font-texte"
           },
           children: [weekDay]
         },
         {
           type: "span",
           attributes: {
-            class: "text-sm lg:text-[28.4px] font-texte"
+            class: "text-sm font-texte"
           },
           children: [day]
         },
         {
           type: "span",
           attributes: {
-            class: "text-sm lg:text-[28.4px] font-texte"
+            class: "text-sm font-texte"
           },
           children: [Month]
         }
       ]
     }
   }
+
+  renderEvents() {
+    const events = this.events[this.selectedDay];
+  
+    if (!events || events.length === 0) {
+      return {
+        type: "div",
+        attributes: {
+          id: "events",
+          class: "mt-8 justify-center px-[14px] font-texte text-[16px]",
+        },
+        children: [
+          {
+            type: "div",
+            attributes: {
+              class: "text-center",
+            },
+            children: "Aucun événement pour cette date.",
+          },
+        ],
+      }
+    }
+    else {
+      return{
+        type: "div",
+        attributes: {
+          id: "events",
+          class: "mt-8 justify-center px-[14px] font-texte text-[16px]",
+        },
+        children: events.map(event => this.renderEvent(event)),
+      }
+    }
+  }
+  
+
+  
+
+  renderEvent(event) {
+    const countries = this.getCountryInfo(event.countries);
+    const team1 = countries[0];
+    const team2 = countries[1];
+    const time = new Date(event.schedule).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const title = `${this.state.sport.name} - ${event.categories[0] || "groupe"}`;
+    
+    return this.renderMatch(time, title, team1.name, team1.flagUrl, team2.name, team2.flagUrl);
+  }
+  
+  
+  
 
   renderMatch(time, title, team1, team1Logo, team2, team2Logo) {
     return {
@@ -183,22 +329,22 @@ class Jeu extends Component {
           attributes: {
             class: "text-black-400 lg:text-[35.5px] pt-[16px] lg:pt-[39.76px] pl-[24px] lg:pl-[56.8px]",
           },
-              children: [
-                {
-                  type: "span",
-                  attributes: {
-                    class: "block",
-                  },
-                  children: [time],
-                },
+          children: [
+            {
+              type: "span",
+              attributes: {
+                class: "block", // Converti en bloc pour forcer l'alignement en haut
+              },
+              children: [time],
+            },
           ],
         },
         {
           type: "h3",
-              attributes: {
-                class: "text-center lg:text-[35.5px] font-semibold pb-[24px] lg:pb-[96.56px]", // Centre le texte avec flex-grow
-              },
-              children: [title],
+          attributes: {
+            class: "text-center font-semibold pb-[24px]", // Centre le texte avec flex-grow
+          },
+          children: [title],
         },
         {
           type: "div",

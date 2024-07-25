@@ -176,12 +176,72 @@
   ],
   "countries": [
     {
-      "name": "France",
-      "flagUrl": "https://example.com/france_flag.png"
+        "name": "France",
+        "flagUrl": "https://example.com/france_flag.png"
     },
     {
-      "name": "Germany",
-      "flagUrl": "https://example.com/germany_flag.png"
+        "name": "Germany",
+        "flagUrl": "https://example.com/germany_flag.png"
+    },
+    {
+        "name": "USA",
+        "flagUrl": "https://example.com/usa_flag.png"
+    },
+    {
+        "name": "Spain",
+        "flagUrl": "https://example.com/spain_flag.png"
+    },
+    {
+        "name": "Italy",
+        "flagUrl": "https://example.com/italy_flag.png"
+    },
+    {
+        "name": "Canada",
+        "flagUrl": "https://example.com/canada_flag.png"
+    },
+    {
+        "name": "Brazil",
+        "flagUrl": "https://example.com/brazil_flag.png"
+    },
+    {
+        "name": "Japan",
+        "flagUrl": "https://example.com/japan_flag.png"
+    },
+    {
+        "name": "Australia",
+        "flagUrl": "https://example.com/australia_flag.png"
+    },
+    {
+        "name": "UK",
+        "flagUrl": "https://example.com/uk_flag.png"
+    },
+    {
+        "name": "Russia",
+        "flagUrl": "https://example.com/russia_flag.png"
+    },
+    {
+        "name": "China",
+        "flagUrl": "https://example.com/china_flag.png"
+    },
+    {
+        "name": "India",
+        "flagUrl": "https://example.com/india_flag.png"
+    },
+    {
+        "name": "Argentina",
+        "flagUrl": "https://example.com/argentina_flag.png"
+    },
+    {
+        "name": "Mexico",
+        "flagUrl": "https://example.com/mexico_flag.png"
+    },
+    {
+        "name": "Netherlands",
+        "flagUrl": "https://example.com/netherlands_flag.png"
+    },
+    {
+        "name": "Portugal",
+        "flagUrl": "https://example.com/portugal_flag.png"
     }
   ],
   "venues": [
@@ -197,84 +257,235 @@
   "events": [
     {
       "id": "event1",
-      "sport": "Football",
-      "schedule": "2024-07-24T18:00:00Z",
-      "categories": ["Professional"],
-      "countries": ["France", "Germany"],
-      "start_time": "2024-07-24T18:00:00Z",
-      "end_time": "2024-07-24T20:00:00Z"
+      "sport": "sport1",
+      "schedule": "2024-07-20T18:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["France", "Germany"]
     },
     {
       "id": "event2",
-      "sport": "Swimming",
-      "schedule": "2024-07-24T15:00:00Z",
-      "categories": ["International"],
-      "countries": ["USA", "Australia"],
-      "start_time": "2024-07-24T15:00:00Z",
-      "end_time": "2024-07-24T17:00:00Z"
+      "sport": "sport2",
+      "schedule": "2024-07-21T15:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["USA", "Spain"]
     },
     {
       "id": "event3",
-      "sport": "Concert",
-      "schedule": "2024-07-24T20:00:00Z",
-      "categories": ["Music"],
-      "countries": ["UK", "Canada"],
-      "start_time": "2024-07-24T20:00:00Z",
-      "end_time": "2024-07-24T23:00:00Z"
+      "sport": "sport3",
+      "schedule": "2024-07-26T10:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["USA", "Canada"]
     },
     {
       "id": "event4",
-      "sport": "Basket3x3",
-      "schedule": "2024-07-25T19:00:00Z",
-      "categories": ["Professional"],
-      "countries": ["Spain", "Argentina"],
-      "start_time": "2024-07-25T19:00:00Z",
-      "end_time": "2024-07-25T21:00:00Z"
+      "sport": "sport3",
+      "schedule": "2024-07-26T14:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["France", "Brazil"]
     },
     {
       "id": "event5",
-      "sport": "Football",
-      "schedule": "2024-07-26T09:00:00Z",
-      "categories": ["International"],
-      "countries": ["Italy", "Switzerland"],
-      "start_time": "2024-07-26T09:00:00Z",
-      "end_time": "2024-07-26T12:00:00Z"
+      "sport": "sport3",
+      "schedule": "2024-07-26T18:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["Spain", "Italy"]
     },
     {
       "id": "event6",
-      "sport": "Football",
-      "schedule": "2024-07-26T11:00:00Z",
-      "categories": ["Professional"],
-      "countries": ["UK", "Australia"],
-      "start_time": "2024-07-26T11:00:00Z",
-      "end_time": "2024-07-26T14:00:00Z"
+      "sport": "sport2",
+      "schedule": "2024-07-26T09:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["Japan", "Australia"]
     },
     {
       "id": "event7",
-      "sport": "Skateboarding",
-      "schedule": "2024-07-26T10:00:00Z",
-      "categories": ["Youth"],
-      "countries": ["Japan", "Brazil"],
-      "start_time": "2024-07-26T10:00:00Z",
-      "end_time": "2024-07-26T13:00:00Z"
+      "sport": "sport2",
+      "schedule": "2024-07-26T13:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["UK", "Russia"]
     },
     {
       "id": "event8",
-      "sport": "Tennis",
-      "schedule": "2024-07-25T14:00:00Z",
-      "categories": ["Grand Slam"],
-      "countries": ["Serbia", "Russia"],
-      "start_time": "2024-07-25T14:00:00Z",
-      "end_time": "2024-07-25T17:00:00Z"
+      "sport": "sport2",
+      "schedule": "2024-07-26T17:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["China", "India"]
     },
     {
       "id": "event9",
-      "sport": "Gymnastics",
-      "schedule": "2024-07-25T17:00:00Z",
-      "categories": ["Olympics"],
-      "countries": ["China", "USA"],
-      "start_time": "2024-07-25T17:00:00Z",
-      "end_time": "2024-07-25T20:00:00Z"
+      "sport": "sport1",
+      "schedule": "2024-07-26T20:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["Brazil", "Argentina"]
+    },
+    {
+      "id": "event10",
+      "sport": "sport1",
+      "schedule": "2024-07-26T22:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["Italy", "Spain"]
+    },
+    {
+      "id": "event11",
+      "sport": "sport1",
+      "schedule": "2024-07-26T23:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["Netherlands", "Portugal"]
+    },
+    {
+      "id": "event12",
+      "sport": "sport3",
+      "schedule": "2024-07-27T10:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["Argentina", "Mexico"]
+    },
+    {
+      "id": "event13",
+      "sport": "sport3",
+      "schedule": "2024-07-27T14:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["Germany", "Russia"]
+    },
+    {
+      "id": "event14",
+      "sport": "sport3",
+      "schedule": "2024-07-27T18:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["China", "Japan"]
+    },
+    {
+      "id": "event15",
+      "sport": "sport2",
+      "schedule": "2024-07-27T09:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["UK", "Russia"]
+    },
+    {
+      "id": "event16",
+      "sport": "sport2",
+      "schedule": "2024-07-27T13:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["China", "India"]
+    },
+    {
+      "id": "event17",
+      "sport": "sport2",
+      "schedule": "2024-07-27T17:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["France", "USA"]
+    },
+    {
+      "id": "event18",
+      "sport": "sport1",
+      "schedule": "2024-07-27T20:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["Germany", "Netherlands"]
+    },
+    {
+      "id": "event19",
+      "sport": "sport1",
+      "schedule": "2024-07-27T22:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["Portugal", "Italy"]
+    },
+    {
+      "id": "event20",
+      "sport": "sport1",
+      "schedule": "2024-07-27T23:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["Spain", "Brazil"]
+    },
+    {
+      "id": "event21",
+      "sport": "sport3",
+      "schedule": "2024-07-28T10:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["USA", "Brazil"]
+    },
+    {
+      "id": "event22",
+      "sport": "sport3",
+      "schedule": "2024-07-28T14:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["France", "Canada"]
+    },
+    {
+      "id": "event23",
+      "sport": "sport3",
+      "schedule": "2024-07-28T18:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["Russia", "China"]
+    },
+    {
+      "id": "event24",
+      "sport": "sport2",
+      "schedule": "2024-07-28T09:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["Australia", "Japan"]
+    },
+    {
+      "id": "event25",
+      "sport": "sport2",
+      "schedule": "2024-07-28T13:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["USA", "France"]
+    },
+    {
+      "id": "event26",
+      "sport": "sport2",
+      "schedule": "2024-07-28T17:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["Russia", "China"]
+    },
+    {
+      "id": "event27",
+      "sport": "sport1",
+      "schedule": "2024-07-28T20:00:00Z",
+      "venueId": "venue1",
+      "categories": ["Team"],
+      "countries": ["France", "Italy"]
+    },
+    {
+      "id": "event28",
+      "sport": "sport1",
+      "schedule": "2024-07-28T22:00:00Z",
+      "venueId": "venue2",
+      "categories": ["Team"],
+      "countries": ["Brazil", "Germany"]
+    },
+    {
+      "id": "event29",
+      "sport": "sport1",
+      "schedule": "2024-07-28T23:00:00Z",
+      "venueId": "venue3",
+      "categories": ["Team"],
+      "countries": ["Portugal", "Spain"]
     }
   ]
 }
