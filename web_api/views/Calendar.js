@@ -100,14 +100,14 @@ class Calendar extends Component {
                 {
                   type: "button",
                   attributes: {
-                    class: "text-[11px] bg-black text-white px-[35px] py-[12px] rounded-[30px] w-[116px] h-[35px]",
+                    class: "text-[11px] bg-black text-white rounded-[30px] w-[116px] h-[35px]",
                   },
                   children: ["CALENDRIER"],
                 },
                 {
                   type: "button",
                   attributes: {
-                    class: "text-[11px] border border-black px-[13px] py-[12px] rounded-[30px] w-[116px] h-[35px]",
+                    class: "text-[11px] px-2 font-texte border border-black rounded-[30px] w-[116px] h-[35px]",
                   },
                   children: ["CALENDRIER JOURNALIER"],
                 },
