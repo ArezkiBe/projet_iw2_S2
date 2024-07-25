@@ -3,9 +3,9 @@ import Banner from "../components/Banner.js";
 import Footer from "../components/Footer.js";
 
 class Spot extends Component {
-  constructor(data) {
+  constructor(props) {
     super();
-    this.data = data;
+    this.data = props.data;
   }
 
   renderCalendarDay(weekDay, day, Month) {

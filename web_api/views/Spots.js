@@ -7,9 +7,9 @@ import Banner from "../components/Banner.js";
 
 class Spots extends Component{
 
-  constructor(data) {
+  constructor(props) {
     super();
-    this.data = data;
+    this.data = props.data;
   }
 
 

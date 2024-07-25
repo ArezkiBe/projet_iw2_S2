@@ -4,16 +4,32 @@ import Footer from "../components/Footer.js";
 import Banner from "../components/Banner.js";
 
 class Jeu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sport: null,
+    };
+    this.data = props.data;
+
+    const sportId = this.props.id;
+    const sport = this.data.getSports().find(s => s.id === sportId);
+    this.state.sport = sport;
+
+    const sponsors = sport.sponsors.map(sponsorId => this.data.getSponsors().find(s => s.id === sponsorId));
+    this.state.sponsors = sponsors;
+  }
+
   render() {
     return {
       type: "div",
       children: [
-        // new Navbar().render(),
+        //new Navbar().render(),
         {
           type: Banner,
           props: {
-            bannerSrc: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/bgBasketBall.svg?alt=media&token=a1341b3a-5ad7-4567-955a-2e2e7d47f002",
-            logoSrc: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/basketBall.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
+            bannerSrc: this.state.sport.bannerUrl,
+            logoSrc: this.state.sport.logoUrl,
+            showLogo: true,
           }
         },
         {
@@ -28,36 +44,22 @@ class Jeu extends Component {
                 {
                   type: "h1",
                   attributes: {
-                    class: "text-[40px] lg:text-[56.8px] font-bold pb-[8px] mt-[107px] lg:mt-[113.6px]",
+                    class: "text-[40px] font-bold pb-[8px] mt-[107px] font-title",
                   },
-                  children: ["Basketball 3x3"],
+                  children: this.state.sport.name,
                 },
                 {
-                  type: "p",
+                  type: "div",
                   attributes: {
-                    class: "mt-2 mt-[35.5px] text-black-600 text-[16px] lg:text-[35.5px] mx-[29px] text-center",
+                    class: "mt-2",
                   },
-                  children: [
-                    "Initialement, le basketball fut inventé pour permettre aux élèves de James W. Naismith, inventeur du sport, de garder la forme pendant l’hiver.",
-                  ],
-                },
-                {
-                  type: "p",
-                  attributes: {
-                    class: "mt-2 mt-[35.5px] text-black-600 text-[16px] lg:text-[35.5px] mx-[29px] text-center",
-                  },
-                  children: [
-                    "Ce professeur d’éducation physique au Centre de formation international YMCA de Springfield met au point, en décembre 1891, un sport en salle dont la plupart des règles sont toujours en vigueur aujourd’hui pour régir le fonctionnement du basketball.",
-                  ],
-                },
-                {
-                  type: "p",
-                  attributes: {
-                    class: "mt-2 mt-[35.5px] text-black-600 text-[16px] lg:text-[35.5px] mx-[29px] text-center",
-                  },
-                  children: [
-                    "Dans les années 1920, les premiers matchs internationaux sont disputés, et dans les années 1950 les premiers championnats du monde masculins et féminins sont organisés.",
-                  ],
+                  children: this.state.sport.description.reduce((acc, text, index) => {
+                    if (index > 0) {
+                      acc.push({ type: "br" });
+                    }
+                    acc.push({ type: "span",attributes: {class: "flex justify-center items-center text-center px-[1.813rem] font-texte lg:text-[16px]",}, children: [text] });
+                    return acc;
+                  }, []),
                 },
               ],
             },
@@ -70,7 +72,7 @@ class Jeu extends Component {
                 {
                   type: "h2",
                   attributes: {
-                    class: "font-bold text-[40px] lg:text-[56.8px] lg:mt[102.24px]",
+                    class: "font-bold text-[40px] font-title",
                   },
                   children: ["Calendrier"],
                 },
@@ -99,7 +101,7 @@ class Jeu extends Component {
             {
               type: "div",
               attributes: {
-                class: "mt-8 lg:mt-[102.24px] justify-center px-[14px] lg:px-[80px]",
+                class: "mt-8 justify-center px-[14px] font-texte text-[16px]",
               },
               children: [
                 this.renderMatch("19H", "HOMMES ELIMINATOIRES - GROUPE D", "ETATS UNIS", "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsUsa.svg?alt=media&token=99d9dbd0-c2f8-41ef-bf10-8ec5fc51071a", "JAMAIQUE", "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsJamaique.svg?alt=media&token=360c454e-421f-4ced-88c7-a17a4fda056d"),
@@ -115,7 +117,7 @@ class Jeu extends Component {
                 {
                   type: "h2",
                   attributes: {
-                    class: "font-bold pt-[8px] text-left pl-[32px] text-[40px] lg:text]",
+                    class: "font-bold pt-[8px] text-left pl-[32px] text-[40px] font-title",
                   },
                   children: ["Collaboration"],
                 },
@@ -124,18 +126,15 @@ class Jeu extends Component {
                   attributes: {
                     class: "grid grid-cols-2 lg:grid-cols-3 gap-x-[80px] lg:gap-x-[56.8px] gap-y-[24px] px-[56px] pt-[16px] lg:pt-[56.8px] pb-[40px] lg:pb-[102.24px]",
                   },
-                  children: [
-                    this.renderCollaborator("https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/apple.svg?alt=media&token=a6961ee7-113c-4a4a-ae98-e08a079ec5f3"),
-                    this.renderCollaborator("https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/netflix.svg?alt=media&token=d0814886-1466-461d-9b18-cde3883599dc"),
-                    this.renderCollaborator("https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/uber.svg?alt=media&token=e40cad77-5486-4e94-9e4e-1eee0061cc6a"),
-                    this.renderCollaborator("https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/amazon.svg?alt=media&token=2a0b4c59-cc43-4f71-8d69-69f3034d4d47"),
-                  ],
+                  children: this.state.sponsors.map(sponsor => this.renderCollaborator(sponsor.logoUrl)),
                 },
               ],
             },
           ],
         },
-        new Footer().render(),
+        {
+          type: Footer,
+        }
       ],
     };
   }
