@@ -258,27 +258,32 @@ class Calendar extends Component {
             {
               type: "h1",
               attributes: {
-                class: "text-[16px] font-regular my-[40px] font-title ",
+                class: "text-[16px] font-regular my-[40px] lg:mt-[102.24px] text-center lg:font-bold lg:text-[56.8px] font-title ",
               },
               children: ["CALENDRIER OLYMPIQUE"],
             },
             {
               type: "div",
               attributes: {
-                class: "flex justify-center space-x-[16px]",
+                class: "flex justify-center space-x-[16px] lg:space-x-[42.6px] lg:mt-[102.24px]",
               },
               children: [
                 {
                   type: "button",
                   attributes: {
-                    class: "text-[11px] font-texte bg-black text-white rounded-[30px] w-[116px] h-[35px]",
+                    class:"text-[11px] font-texte lg:text-[35.5px] bg-black text-white px-[35px] py-[12px] rounded-[30px] w-[116px] lg:w-[342.22px] h-[35px] lg:h-[61.77px] flex items-center justify-center",
                   },
                   children: ["CALENDRIER"],
                 },
                 {
                   type: "button",
                   attributes: {
-                    class: "text-[11px] px-2 font-texte border border-black rounded-[30px] w-[116px] h-[35px]",
+                    class: "text-[11px] lg:text-[35.5px] bg-black text-white px-[35px] py-[12px] rounded-[30px] w-[116px] lg:w-[500px] h-[35px] lg:h-[61.77px] flex items-center justify-center",
+                  },
+                  events: {
+                    click: () => {
+                      window.location.href = `/daily`;
+                    }
                   },
                   events: {
                     click: () => {
@@ -332,3 +337,26 @@ class Calendar extends Component {
 }
 
 export default Calendar;
+
+
+//1200PX 852px
+//403PX 286.13px
+//332PX 235.72px
+//301PX 213.71px
+//265PX 188.15px
+//212PX 150.52px
+//179PX 127.09px
+//160PX 113.6px
+//144PX 102.24px
+//136PX 96.56px
+//108PX 76.68px
+//104 73.84px
+//100PX 71px
+//80PX 56.8px
+//76PX 53.96px
+//64PX 45.44px
+//60PX 42.6px
+//56PX 39.76px
+//50PX 35.5px
+//40PX 28.4px
+//24PX 17.04px

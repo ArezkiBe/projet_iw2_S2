@@ -118,7 +118,58 @@ class MapPage extends Component{
         {
           type: "div",
           attributes: {
-            class: "flex justify-between items-center mt-[32px] px-[16px]"
+            class: "flex justify-between items-center mt-[32px] lg:mt-[102.24px] px-[16px] lg:px-[56.8px]"
+          },
+          children: [
+            this.renderSiteButton(),
+            this.renderSpotButton(),
+          ]
+        },
+        this.renderMap(),
+        {
+          type: Footer,
+        }
+      ],
+    };
+  }
+
+  renderMap(bool = false) {
+    if (this.filterOpen && !bool) {
+      return "";
+    } else {
+      return {
+        type: "div",
+        attributes : {
+          id: "map",
+          class: "h-["+this.mapHeight+"px] w-["+this.mapWidth+"px] mt-[18px]",
+        },
+      }
+    }
+  }
+
+  renderFilterPage() {
+    if (!this.filterOpen) {
+      return {
+        type: "div",
+        attributes: {
+          id: "filterModal",
+          class: "opacity-0"
+        }
+      };
+    }
+    return {
+      type: "div",
+      attributes: {
+        id: "filterModal",
+        class: "absolute top-0 w-full h-full bg-white shadow-lg transition-transform duration-300 ease-in-out z-100000"
+      },
+      children: [
+        { type: Navbar },
+        this.renderFilterPage(),
+        {
+          type: "div",
+          attributes: {
+            class: "p-4"
           },
           children: [
             this.renderSiteButton(),
