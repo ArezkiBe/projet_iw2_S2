@@ -4,86 +4,123 @@ import Footer from "../components/Footer.js";
 
 class Spot extends Component {
   constructor(props) {
-    super();
+    super(props);
+    this.sport = null;
     this.data = props.data;
+
+    const spotId = this.props.id;
+    const spot = this.data.getSpots().find(s => s.id === spotId);
+    this.spot = spot;
+
+    this.days = [];
+    this.selectedDay = 0;
+    this.events = [];
+
+    this.initDays();
+    this.initEvents();
+
+    // const sponsors = sport.sponsors.map(sponsorId => this.data.getSponsors().find(s => s.id === sponsorId));
+    // this.state.sponsors = sponsors;
   }
 
-  renderCalendarDay(weekDay, day, Month) {
-    return {
-      type: "div",
-      attributes: {
-        class: "flex flex-col items-center justify-center w-[5.625rem] h-[3.75rem] bg-orange-500 rounded-md"
+  initDays() {
+    let now = new Date();
+    let tomorrow = new Date().addDays(1);
+    let afterTomorrow = new Date().addDays(2);
+    const days = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+    const months = ['Jan', 'Fev', 'Mars', 'Avr', 'Mai', 'Jui', 'Jui', 'Août', 'Sept', 'Oct', 'Nov', 'Dec'];
+    
+    
+    this.days = [
+      {
+        day: days[ now.getDay() ],
+        date: now.getDate(),
+        month: months[ now.getMonth() ]
       },
-      children: [
-        {
-          type: "span",
-          attributes: {
-            class: "text-sm font-title"
-          },
-          children: [weekDay]
-        },
-        {
-          type: "span",
-          attributes: {
-            class: "text-sm"
-          },
-          children: [day]
-        },
-        {
-          type: "span",
-          attributes: {
-            class: "text-sm"
-          },
-          children: [Month]
+      {
+        day: days[ tomorrow.getDay() ],
+        date: tomorrow.getDate(),
+        month: months[ tomorrow.getMonth() ]
+      },
+      {
+        day: days[ afterTomorrow.getDay() ],
+        date: afterTomorrow.getDate(),
+        month: months[ afterTomorrow.getMonth() ]
+      },
+    ]
+  }
+
+  initEvents() {
+    let spot = this.spot;
+    let events = this.data.getEvents();
+
+
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const afterTomorrow = new Date(today);
+    afterTomorrow.setDate(today.getDate() + 2);
+    
+    const formatDate = (date) => date.toISOString().split('T')[0]; // Format YYYY-MM-DD
+
+    const spotEvents = events.filter(event => spot.events.includes(event.id));
+
+    const eventsByDate = {
+        today: [],
+        tomorrow: [],
+        afterTomorrow: []
+    };
+
+    spotEvents.forEach(event => {
+        const eventDate = new Date(event.schedule);
+        const eventDateStr = formatDate(eventDate);
+
+        if (formatDate(today) === eventDateStr) {
+            eventsByDate.today.push(event);
+        } else if (formatDate(tomorrow) === eventDateStr) {
+            eventsByDate.tomorrow.push(event);
+        } else if (formatDate(afterTomorrow) === eventDateStr) {
+            eventsByDate.afterTomorrow.push(event);
         }
-      ]
+    });
+
+    const groupBySport = (events) => {
+        const grouped = {};
+        events.forEach(event => {
+            if (!grouped[event.sport]) {
+                grouped[event.sport] = [];
+            }
+            grouped[event.sport].push(event);
+        });
+        return Object.values(grouped);
+    };
+
+    this.events = [groupBySport(eventsByDate.today), groupBySport(eventsByDate.tomorrow), groupBySport(eventsByDate.afterTomorrow)]
+
+  }
+
+  setDay (position) {
+    if (this.selectedDay !== position) {
+      this.selectedDay = position
+    } else {
+      return;
     }
+
+    this.updateCalendar()
   }
 
-  renderSportEvent(event) {
-    return {
-      type: "div",
-      attributes: {
-        class:
-        "flex items-center p-2 mt-[2rem] bg-[#FFF5F5] border border-black rounded-[1.87rem] w-[22.62rem] h-[6.25rem]",
-      },
-      children: [
-        {
-          type: "img",
-          attributes: {
-            src: event.icon,
-            alt: event.title,
-            class: "w-[5rem] h-[5rem] ml-[2rem]",
-          },
-        },
-        {
-          type: "div",
-          children: [
-            {
-              type: "h3",
-              attributes: { class: "font-bold text-sm p-[0.625rem]" },
-              children: [event.title],
-            },
-            {
-              type: "p",
-              attributes: { class: "text-xs whitespace-pre-line pl-[1.81rem]" },
-              children: [event.times],
-            },
-          ],
-        },
-      ],
-    };
-  }
+  updateCalendar() {
+    const element = this.renderCalendar();
+    const element2 = this.renderEvents();
+    let updateCalendar = new CustomEvent("updateDOM", {
+      detail: { id: "calendar", element: element },
+    });
+    let updateEvents = new CustomEvent("updateDOM", {
+      detail: { id: "events", element: element2 },
+    });
 
-  renderSocialIcon(icon) {
-    return {
-      type: "img",
-      attributes: {
-        src: icon,
-        alt: "Social Icon",
-        class: "w-6 h-6 mx-2",
-      },
-    };
+    window.dispatchEvent(updateCalendar);
+    window.dispatchEvent(updateEvents);
   }
 
   render() {
@@ -107,9 +144,9 @@ class Spot extends Component {
           },
           children: [
             {
-              type: "h1",
-              attributes: { class: "text-4xl font-bold mt-[2.5rem] ml-[6.31] mr-[6.37]" },
-              children: ["Arena Bercy"],
+              type: "div",
+              attributes: { class: "text-4xl font-bold mt-[2.5rem] ml-[6.31] mr-[6.37] font-title" },
+              children: [this.spot.name],
             },
             {
               type: "div",
@@ -120,33 +157,18 @@ class Spot extends Component {
             {
               type: "div",
               attributes: { class: "flex justify-center mt-[2rem]" },
-              children: [
-                {
-                  type: "span",
-                  attributes: { class: "text-yellow-500" },
-                  children: [
-                    {
-                      type: "img",
-                      attributes: {
-                        src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/Etoiles.svg?alt=media&token=cd6484b6-975d-4956-adb3-d88b19c63b40",
-                      },
-                    },
-                  ],
-                },
-              ],
+              children: this.renderStars(),
             },
             {
               type: "p",
-              attributes: { class: "mt-[2rem]  px-[1.25rem] text-center" },
-              children: [
-                "L’Arena Bercy est un lieu emblématique de la culture et du sport en France et à Paris, reconnaissable par sa forme pyramidale caractéristique qui attire l’œil dans le décor du 12e arrondissement de Paris. Sortie de terre en 1984, cette salle accueille à la fois des événements sportifs du plus haut niveau, comme le Rolex Paris Master, un tournoi de tennis international masculin du circuit ATP, les phases finales du championnat d’Europe féminin de handball 2018, et des concerts parmi les plus grands artistes français et internationaux comme Madonna, Daft Punk, Johnny Hallyday ou encore Paul McCartney. ",
-              ],
+              attributes: { class: "mt-[2rem]  px-[1.25rem] text-center font-texte" },
+              children: [this.spot.description],
             },
 
             {
               type: "div",
               attributes: {
-                class: "flex justify-around mt-[1.25rem] text-center text-base",
+                class: "flex justify-around mt-[1.25rem] text-center text-base font-texte",
               },
               children: [
                 { type: "span", children: ["Intérieur"] },
@@ -155,11 +177,10 @@ class Spot extends Component {
               ],
             },
 
-            // Sports Retransmis
             {
-              type: "h2",
+              type: "div",
               attributes: {
-                class: "text-[2.25rem] font-semibold mt-[2rem] text-center",
+                class: "text-[2.25rem] font-semibold mt-[2rem] text-center font-title",
               },
               children: ["Sports retransmis"],
             },
@@ -175,21 +196,13 @@ class Spot extends Component {
                     class: "flex space-x-6"
                   },
                   children: [
-                    this.renderCalendarDay("Sam", "29", "Juin"),
-                    this.renderCalendarDay("Dim", "30", "Juin"),
-                    this.renderCalendarDay("Lun", "1", "Jui"),
+                    this.renderCalendar(),
                   ]
                 }
                 
               ]
             },
-            {
-              type: "div",
-              attributes: {
-                class: "mt-[2rem] flex flex-col justify-center items-center mb-[2.5rem] px-[12px]",
-              },
-              children: this.data.getSportEvents().map(this.renderSportEvent),
-            },
+            this.renderEvents(),
           ],
         },
 
@@ -197,182 +210,180 @@ class Spot extends Component {
       ],
     };
   }
+
+  renderCalendar() {
+    return {
+      type: "div",
+      attributes: {
+        class: "flex space-x-6",
+        id: "calendar"
+      },
+      children: [
+        this.renderCalendarDay(this.days[0].day, this.days[0].date.toString(), this.days[0].month, 0),
+        this.renderCalendarDay(this.days[1].day, this.days[1].date.toString(), this.days[1].month, 1),
+        this.renderCalendarDay(this.days[2].day, this.days[2].date.toString(), this.days[2].month, 2),
+      ],
+    }
+  }
+
+  renderCalendarDay(weekDay, day, Month, position) {
+    return {
+      type: "div",
+      attributes: {
+        class: "flex flex-col items-center justify-center w-[5.625rem] h-[3.75rem] rounded-md " + (this.selectedDay === position ? "bg-[#F79E1B]" : "bg-[#DBC9C9]"),
+      },
+      events: {
+        click: [function () {
+          this.setDay(position);
+        }.bind(this)],
+      },
+      children: [
+        {
+          type: "span",
+          attributes: {
+            class: "text-sm font-texte"
+          },
+          children: [weekDay]
+        },
+        {
+          type: "span",
+          attributes: {
+            class: "text-sm font-texte"
+          },
+          children: [day]
+        },
+        {
+          type: "span",
+          attributes: {
+            class: "text-sm font-texte"
+          },
+          children: [Month]
+        }
+      ]
+    }
+  }
+
+  renderEvents() {
+    return {
+      type: "div",
+      attributes: {
+        class: "mt-[2rem] flex flex-col justify-center items-center mb-[2.5rem] px-[12px]",
+        id: "events",
+      },
+      children: this.events[this.selectedDay].map(event => this.renderSportEvent(event)),
+    };
+  }
+
+  renderSportEvent(events) {
+    if (events.length === 0) {
+      return "Il n'y a rien à cette date";
+    }
+    const sport = this.data.getSports().find(s => s.name === events[0].sport);
+
+    const renderCategories = (events) => {
+      let result = [];
+      for (let i = 0; i < events.length; i++) {
+        result.push(
+          {
+            type: "div",
+            attributes: { class: "text-xs whitespace-pre-line pl-[1.81rem]" },
+            children: this.formatEventTimes(events[i]),
+          }
+        )
+      }
+
+      return result;
+    }
+
+    return {
+      type: "div",
+      attributes: {
+        class:
+        "flex items-center p-2 mt-[2rem] bg-[#FFF5F5] border border-black rounded-[1.87rem] w-[22.62rem] h-[6.25rem]",
+      },
+      children: [
+        {
+          type: "img",
+          attributes: {
+            src: sport.logoUrl,
+            alt: sport.name,
+            class: "w-[5rem] h-[5rem] ml-[2rem]",
+          },
+        },
+        {
+          type: "div",
+          children: [
+            {
+              type: "div",
+              attributes: { class: "font-bold text-sm p-[0.625rem]" },
+              children: [sport.name],
+            },
+            ...renderCategories(events),
+          ],
+        },
+      ],
+    };
+  }
+
+  formatEventTimes(events) {
+    const timeCategoryMap = {};
+
+    const startTime = new Date(events.start_time);
+    const endTime = new Date(events.end_time);
+    
+    const startHour = startTime.getUTCHours();
+    const startMinute = startTime.getUTCMinutes();
+    const endHour = endTime.getUTCHours();
+    const endMinute = endTime.getUTCMinutes();
+
+    const startFormatted = `${startHour}h${startMinute ? '-' + startMinute : ''}`;
+    const endFormatted = `${endHour}h${endMinute ? '-' + endMinute : ''}`;
+    
+    const timeInterval = `${startFormatted}-${endFormatted}`;
+    
+    const categories = events.categories.join(', ');
+
+    if (!timeCategoryMap[timeInterval]) {
+        timeCategoryMap[timeInterval] = [];
+    }
+    timeCategoryMap[timeInterval].push(categories);
+
+    const result = Object.entries(timeCategoryMap).map(([timeInterval, categoriesList]) => {
+        const uniqueCategories = [...new Set(categoriesList.flat())]; // Éliminer les doublons
+        return `${timeInterval}: ${uniqueCategories.join(', ')}`;
+    });
+
+    return result;
+  }
+
+
+  renderStars() {
+    let children = [];
+
+    for (let i = 1; i <= 5; i++) {
+        children.push({
+          type: "img",
+          attributes: {
+            src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/"+(this.spot.rating >= i ? "full_star" : "empty_star")+".svg?alt=media&token=cd6484b6-975d-4956-adb3-d88b19c63b40",
+          },
+        });      
+    }
+
+    return children;
+  }
+
+  renderSocialIcon(icon) {
+    return {
+      type: "img",
+      attributes: {
+        src: icon,
+        alt: "Social Icon",
+        class: "w-6 h-6 mx-2",
+      },
+    };
+  }
 }
 
 export default Spot;
 
-// import { Component } from "../core/MiniReact.js";
-// import Banner from "../components/Banner.js";
-// import Footer from "../components/Footer.js";
 
-// class Spot extends Component {
-//   constructor(data) {
-//     super();
-//     this.data = data;
-//   }
-
-//   renderCalendarDay(day, month) {
-//     return {
-//       type: "div",
-//       attributes: {
-//         class:
-//         "flex items-center bg-[#FFF5F5] rounded-[30px] w-[23rem] h-[6rem] mx-auto",
-//       },
-//       children: [
-//         { type: "span", children: [day] },
-//         { type: "span", children: [month] },
-//       ],
-//     };
-//   }
-
-//   renderSportEvent(event) {
-//     return {
-//       type: "div",
-//       attributes: {
-//         class:
-//           "flex items-center bg-[#FFF5F5] rounded-[30px] w-[18.2rem] h-[5rem] ml-[1.25rem]",
-//       },
-//       children: [
-//         {
-//           type: "img",
-//           attributes: {
-//             src: event.icon,
-//             alt: event.title,
-//             class: "w-[4rem] h-[4rem]",
-//           },
-//         },
-//         {
-//           type: "div",
-//           children: [
-//             {
-//               type: "h3",
-//               attributes: { class: "font-bold text-sm" },
-//               children: [event.title],
-//             },
-//             {
-//               type: "p",
-//               attributes: { class: "text-xs whitespace-pre-line" },
-//               children: [event.times],
-//             },
-//           ],
-//         },
-//       ],
-//     };
-//   }
-
-//   renderSocialIcon(icon) {
-//     return {
-//       type: "img",
-//       attributes: {
-//         src: icon,
-//         alt: "Social Icon",
-//         class: "w-6 h-6",
-//       },
-//     };
-//   }
-
-//   render() {
-//     return {
-//       type: "div",
-//       children: [
-//         {
-//           type: Banner,
-//           props: {
-//             bannerSrc: "https://picsum.photos/900/600",
-//             showSearchBar: true,
-//             title: "JEUX",
-//             titleStyle: "text-3xl",
-//           },
-//         },
-
-//         {
-//           type: "div",
-//           attributes: {
-//             class: "container mx-auto text-center",
-//           },
-//           children: [
-//             {
-//               type: "h1",
-//               attributes: { class: "text-4xl font-bold mt-[2.5rem] mb-[2rem] ml-[6.31] mr-[6.37]" },
-//               children: ["Arena Bercy"],
-//             },
-//             {
-//               type: "div",
-//               attributes: {
-//                 class: "mt-2",
-//               },
-//             },
-//             {
-//               type: "div",
-//               attributes: { class: "flex justify-center mt-2" },
-//               children: [
-//                 {
-//                   type: "span",
-//                   attributes: { class: "text-yellow-500" },
-//                   children: [
-//                     {
-//                       type: "img",
-//                       attributes: {
-//                         src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/Etoiles.svg?alt=media&token=cd6484b6-975d-4956-adb3-d88b19c63b40",
-//                       },
-//                     },
-//                   ],
-//                 },
-//               ],
-//             },
-//             {
-//               type: "p",
-//               attributes: { class: "text-sm" },
-//               children: [
-//                 "L’Arena Bercy est un lieu emblématique de la culture et du sport en France et à Paris, reconnaissable par sa forme pyramidale caractéristique qui attire l’œil dans le décor du 12e arrondissement de Paris. Sortie de terre en 1984, cette salle accueille à la fois des événements sportifs du plus haut niveau, comme le Rolex Paris Master, un tournoi de tennis international masculin du circuit ATP, les phases finales du championnat d’Europe féminin de handball 2018, et des concerts parmi les plus grands artistes français et internationaux comme Madonna, Daft Punk, Johnny Hallyday ou encore Paul McCartney. ",
-//               ],
-//             },
-
-//             {
-//               type: "div",
-//               attributes: {
-//                 class: "flex justify-around text-sm",
-//               },
-//               children: [
-//                 { type: "span", children: ["Intérieur"] },
-//                 { type: "span", children: ["Nourriture/Boissons"] },
-//                 { type: "span", children: ["50 Pers Max"] },
-//               ],
-//             },
-
-//             // Sports Retransmis
-//             {
-//               type: "h2",
-//               attributes: {
-//                 class: "text-xl font-bold",
-//               },
-//               children: ["Sports retransmis"],
-//             },
-//             {
-//               type: "div",
-//               attributes: {
-//                 class: "flex justify-center space-x-4",
-//               },
-//               children: [
-//                 this.renderCalendarDay("Sam", "29"),
-//                 this.renderCalendarDay("Dim", "30"),
-//                 this.renderCalendarDay("Lun", "1"),
-//               ],
-//             },
-//             {
-//               type: "div",
-//               attributes: {
-//                 class: "mt-4 mb-3",
-//               },
-//               children: this.data.getSportEvents().map(this.renderSportEvent),
-//             },
-//           ],
-//         },
-
-//         { type: Footer },
-//       ],
-//     };
-//   }
-// }
-
-// export default Spot;

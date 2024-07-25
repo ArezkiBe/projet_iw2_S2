@@ -42,7 +42,7 @@
       "type": ["Outdoor"],
       "bannerUrl": "https://example.com/stadium_banner.png",
       "logoUrl": "https://example.com/stadium_logo.png",
-      "events": ["event1"]
+      "events": ["event4", "event5", "event6"]
     },
     {
       "id": "spot2",
@@ -200,63 +200,81 @@
       "sport": "Football",
       "schedule": "2024-07-24T18:00:00Z",
       "categories": ["Professional"],
-      "countries": ["France", "Germany"]
+      "countries": ["France", "Germany"],
+      "start_time": "2024-07-24T18:00:00Z",
+      "end_time": "2024-07-24T20:00:00Z"
     },
     {
       "id": "event2",
       "sport": "Swimming",
       "schedule": "2024-07-24T15:00:00Z",
       "categories": ["International"],
-      "countries": ["USA", "Australia"]
+      "countries": ["USA", "Australia"],
+      "start_time": "2024-07-24T15:00:00Z",
+      "end_time": "2024-07-24T17:00:00Z"
     },
     {
       "id": "event3",
       "sport": "Concert",
       "schedule": "2024-07-24T20:00:00Z",
       "categories": ["Music"],
-      "countries": ["UK", "Canada"]
+      "countries": ["UK", "Canada"],
+      "start_time": "2024-07-24T20:00:00Z",
+      "end_time": "2024-07-24T23:00:00Z"
     },
     {
       "id": "event4",
-      "sport": "Basketball",
+      "sport": "Basket3x3",
       "schedule": "2024-07-25T19:00:00Z",
       "categories": ["Professional"],
-      "countries": ["Spain", "Argentina"]
+      "countries": ["Spain", "Argentina"],
+      "start_time": "2024-07-25T19:00:00Z",
+      "end_time": "2024-07-25T21:00:00Z"
     },
     {
       "id": "event5",
-      "sport": "Mountain Biking",
+      "sport": "Football",
       "schedule": "2024-07-26T09:00:00Z",
-      "categories": ["Extreme"],
-      "countries": ["Italy", "Switzerland"]
+      "categories": ["International"],
+      "countries": ["Italy", "Switzerland"],
+      "start_time": "2024-07-26T09:00:00Z",
+      "end_time": "2024-07-26T12:00:00Z"
     },
     {
       "id": "event6",
-      "sport": "Equestrian",
+      "sport": "Football",
       "schedule": "2024-07-26T11:00:00Z",
       "categories": ["Professional"],
-      "countries": ["UK", "Australia"]
+      "countries": ["UK", "Australia"],
+      "start_time": "2024-07-26T11:00:00Z",
+      "end_time": "2024-07-26T14:00:00Z"
     },
     {
       "id": "event7",
       "sport": "Skateboarding",
       "schedule": "2024-07-26T10:00:00Z",
       "categories": ["Youth"],
-      "countries": ["Japan", "Brazil"]
+      "countries": ["Japan", "Brazil"],
+      "start_time": "2024-07-26T10:00:00Z",
+      "end_time": "2024-07-26T13:00:00Z"
     },
     {
       "id": "event8",
       "sport": "Tennis",
       "schedule": "2024-07-25T14:00:00Z",
       "categories": ["Grand Slam"],
-      "countries": ["Serbia", "Russia"]
+      "countries": ["Serbia", "Russia"],
+      "start_time": "2024-07-25T14:00:00Z",
+      "end_time": "2024-07-25T17:00:00Z"
     },
     {
       "id": "event9",
       "sport": "Gymnastics",
       "schedule": "2024-07-25T17:00:00Z",
       "categories": ["Olympics"],
-      "countries": ["China", "USA"]
+      "countries": ["China", "USA"],
+      "start_time": "2024-07-25T17:00:00Z",
+      "end_time": "2024-07-25T20:00:00Z"
     }
   ]
 }
