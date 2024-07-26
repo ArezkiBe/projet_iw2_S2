@@ -3,6 +3,15 @@ import Navbar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
 
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sport: null,
+    };
+    this.data = props.data;
+  }
+
+
   render() {
     return {
       type: "div",
