@@ -3,6 +3,7 @@ import { Component } from "../core/MiniReact.js";
 import Button from "../components/Button.js";
 import MiniReactDom from "../core/MiniReactDom.js";
 import Banner from "../components/Banner.js";
+import Navbar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
 
 class Spots extends Component {
@@ -59,6 +60,7 @@ class Spots extends Component {
         class: "", 
       },
       children: [
+        { type: Navbar },
         {
           type: Banner,
           props: {

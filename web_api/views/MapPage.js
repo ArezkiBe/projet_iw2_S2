@@ -3,6 +3,7 @@ import { Component } from "../core/MiniReact.js";
 import Button from "../components/Button.js";
 import MiniReactDom from "../core/MiniReactDom.js";
 import Footer from "../components/Footer.js";
+import Navbar from "../components/Navbar.js";
 
 
 class MapPage extends Component{
@@ -112,6 +113,7 @@ class MapPage extends Component{
         class: "flex-grow overflow-y-auto", 
       },
       children: [
+        { type: Navbar },
         this.renderFilterPage(),
         {
           type: "div",

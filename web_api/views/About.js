@@ -1,26 +1,54 @@
-import BrowserLink from "../components/BrowserLink.js";
 import { Component } from "../core/MiniReact.js";
-import MiniReactDom from "../core/MiniReactDom.js";
+import Navbar from "../components/Navbar.js";
+import Footer from "../components/Footer.js";
 
-
-class About extends Component {
+class AboutUs extends Component {
   render() {
-    return  {
-      type: "h1",
-      attributes: {
-        class: "", 
-      },
+    return {
+      type: "div",
       children: [
+        { type: Navbar },
         {
-          type: BrowserLink,
-          props: {
-            title: "Page 2",
-          }
+          type: "div",
+          attributes: {
+            class: "container mx-auto p-4 text-center mt-8",
+          },
+          children: [
+            {
+              type: "h1",
+              attributes: {
+                class: "text-3xl font-bold mb-4 font-title",
+              },
+              children: ["A PROPOS DE NOUS"],
+            },
+            {
+              type: "div",
+              attributes: {
+                class: "mt-4",
+              },
+              children: [
+                {
+                  type: "p",
+                  attributes: {
+                    class: "mb-4 text-lg",
+                  },
+                  children: ["Nous sommes une équipe passionnée dédiée à ..."],
+                },
+                {
+                  type: "p",
+                  attributes: {
+                    class: "text-lg",
+                  },
+                  children: ["Notre mission est de ..."],
+                },
+              ],
+            },
+          ],
         },
+        {type: Footer},
       ],
-    }
+    };
   }
 }
 
-
-export default About;
+export default AboutUs;

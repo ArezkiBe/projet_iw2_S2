@@ -1,6 +1,7 @@
 import { Component } from "../core/MiniReact.js";
 import Banner from "../components/Banner.js";
 import Footer from "../components/Footer.js";
+import Navbar from "../components/Navbar.js";
 
 class Calendrier extends Component {
   constructor(data) {
@@ -65,6 +66,7 @@ class Calendrier extends Component {
     return {
       type: "div",
       children: [
+        { type: Navbar },
         {
           type: Banner,
           props: {

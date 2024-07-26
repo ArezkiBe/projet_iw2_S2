@@ -1,6 +1,7 @@
 import { Component } from "../core/MiniReact.js";
 import Banner from "../components/Banner.js";
 import Footer from "../components/Footer.js";
+import Navbar from "../components/Navbar.js";
 
 class Jeux extends Component {
   constructor(props) {
@@ -144,6 +145,7 @@ class Jeux extends Component {
         class: "",
       },
       children: [
+        { type: Navbar },
         {
           type: Banner,
           props: {

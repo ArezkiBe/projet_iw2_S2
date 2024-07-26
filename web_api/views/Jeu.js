@@ -114,7 +114,7 @@ class Jeu extends Component {
     return {
       type: "div",
       children: [
-        //new Navbar().render(),
+        { type: Navbar },
         {
           type: Banner,
           props: {
