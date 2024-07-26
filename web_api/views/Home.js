@@ -147,7 +147,7 @@ class Home extends Component{
           type: Banner,
           props: {
             bannerSrc: this.mainPageData.bannerUrl,
-            logoSrc: "https://picsum.photos/300",
+            logoSrc: this.mainPageData.logoUrl,
             showLogo: true,
           }
         },

@@ -7,8 +7,8 @@
       "type": "Team",
       "spot_type": ["Outdoor"],
       "sponsors": ["1", "2", "4", "6"],
-      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/badMinton.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
-      "bannerUrl": "https://example.com/football_banner.png"
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/football.svg?alt=media&token=ad66494e-dc6c-4d75-b476-68c4e180d392",
+      "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/bgfoot.svg?alt=media&token=8e1ecfdd-e9bd-4650-822c-df5aa97c3710"
     },
     {
       "id": "sport2",
@@ -17,8 +17,8 @@
       "type": "Individual",
       "spot_type": ["Outdoor"],
       "sponsors": ["2", "4"],
-      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/archery.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
-      "bannerUrl": "https://example.com/tennis_banner.png"
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/tennis.svg?alt=media&token=eaa0d998-d626-43da-8384-727043018d8d",
+      "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/bgTenis.svg?alt=media&token=8e1ecfdd-e9bd-4650-822c-df5aa97c3710"
     },
     {
       "id": "sport3",
@@ -147,7 +147,7 @@
   ],
   "mainPage": {
     "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/mainBanner.svg?alt=media&token=7a54decf-bfb5-480b-b214-a81753b3a8b7",
-    "logoUrl": "https://picsum.photos/300",
+    "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/Group%2043.svg?alt=media&token=9c89a163-7462-4bc7-83b9-7d90b765d59b",
     "description": "Les Jeux olympiques d'été de 2024, officiellement appelés les Jeux de la XXXIIIᵉ olympiade, seront célébrés du 26 juillet au 11 août 2024 à Paris, en France. La ville est officiellement désignée lors de la 131ᵉ session du CIO à Lima, au Pérou, le 13 septembre 2017.",
     "sponsors": ["3", "5", "4", "6"]
   },
@@ -158,12 +158,12 @@
     {
       "id": "1",
       "name": "Nike",
-      "logoUrl": "https://example.com/nike_logo.png"
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/Nike.svg?alt=media&token=975afb46-909b-47b9-aa85-37e493d0293e"
     },
     {
       "id": "2",
-      "name": "Adidas",
-      "logoUrl": "https://example.com/adidas_logo.png"
+      "name": "Samsung",
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/Samsung.svg?alt=media&token=4bb80695-c39a-41f2-bf21-f36aa3c74239"
     },
     {
       "id": "3",
@@ -188,72 +188,72 @@
   ],
   "countries": [
     {
-        "name": "France",
-        "flagUrl": "https://example.com/france_flag.png"
+        "name": "Pologne",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/FlagsPol.svg?alt=media&token=8878e0dd-1fe3-4318-9dc0-a07ef86a551c"
     },
     {
-        "name": "Germany",
-        "flagUrl": "https://example.com/germany_flag.png"
+        "name": "Japan",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/FlagsJpn.svg?alt=media&token=5a4bc6ed-4170-4b36-9054-d089c984b72c"
     },
     {
         "name": "USA",
         "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsUsa.svg?alt=media&token=99d9dbd0-c2f8-41ef-bf10-8ec5fc51071a"
     },
     {
-        "name": "Spain",
-        "flagUrl": "https://example.com/spain_flag.png"
+        "name": "Switzerland",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/FlagsSui.svg?alt=media&token=4497517c-2993-47dc-91f5-6e84fe659257"
     },
     {
-        "name": "Italy",
-        "flagUrl": "https://example.com/italy_flag.png"
+        "name": "Jamaica",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/FlagsJam.svg?alt=media&token=10fa64d4-b51b-48a6-86f8-d50d8be00166"
     },
     {
-        "name": "Canada",
-        "flagUrl": "https://example.com/canada_flag.png"
+        "name": "Greece",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsGrece.svg?alt=media&token=0f368089-d15f-4069-bd39-87db2e8559e8"
     },
     {
         "name": "Brazil",
-        "flagUrl": "https://example.com/brazil_flag.png"
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/BR.svg?alt=media&token=b849f1ff-7aee-469c-8118-c5ecf71dc3dc"
     },
     {
         "name": "Japan",
-        "flagUrl": "https://example.com/japan_flag.png"
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/JP.svg?alt=media&token=bfc6b624-2c9c-4bca-aac8-9519c99b4120"
     },
     {
-        "name": "Australia",
-        "flagUrl": "https://example.com/australia_flag.png"
-    },
-    {
-        "name": "UK",
-        "flagUrl": "https://example.com/uk_flag.png"
-    },
-    {
-        "name": "Russia",
-        "flagUrl": "https://example.com/russia_flag.png"
+        "name": "Belgium",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/BE.svg?alt=media&token=69299145-243a-44a0-a1b0-97d1ca05573f"
     },
     {
         "name": "China",
-        "flagUrl": "https://example.com/china_flag.png"
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/CN.svg?alt=media&token=f6848dfe-9e43-4f6d-9424-10d6650a33bf"
     },
     {
-        "name": "India",
-        "flagUrl": "https://example.com/india_flag.png"
+        "name": "Algeria",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/DZ.svg?alt=media&token=bc7cdc08-880c-4af5-9ed5-ae4c165e4eb0"
+    },
+    {
+        "name": "Morocco",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/MA.svg?alt=media&token=828aa79d-a5ed-4aac-b4da-14996d4b0774"
+    },
+    {
+        "name": "Korea",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/KR.png?alt=media&token=b6de4ba3-a4ce-46a2-9a60-a86d31dd9c5e"
+    },
+    {
+        "name": "France",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/PM.png?alt=media&token=fefb643a-0a60-427f-8805-ad21c40cbf30"
     },
     {
         "name": "Argentina",
-        "flagUrl": "https://example.com/argentina_flag.png"
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/AR.svg?alt=media&token=6f0521ed-7d5f-436f-9890-9a74ee4ecba9"
     },
     {
-        "name": "Mexico",
-        "flagUrl": "https://example.com/mexico_flag.png"
-    },
-    {
-        "name": "Netherlands",
-        "flagUrl": "https://example.com/netherlands_flag.png"
+        "name": "Italy",
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/IT.svg?alt=media&token=bd68de4f-b67c-47cc-ab03-8ffd6e1c5a47"
     },
     {
         "name": "Portugal",
-        "flagUrl": "https://example.com/portugal_flag.png"
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/PT.png?alt=media&token=bd7ba9d3-d894-4cb7-a945-62f26ae02197"
     }
   ],
   "venues": [
@@ -305,7 +305,7 @@
       "schedule": "2024-07-20T18:00:00Z",
       "venueId": "venue1",
       "categories": ["Team"],
-      "countries": ["France", "Germany"]
+      "countries": ["France", "Italy"]
     },
     {
       "id": "event2",
@@ -313,7 +313,7 @@
       "schedule": "2024-07-21T15:00:00Z",
       "venueId": "venue2",
       "categories": ["Team"],
-      "countries": ["USA", "Spain"]
+      "countries": ["USA", "Algeria"]
     },
     {
       "id": "event3",
@@ -321,7 +321,7 @@
       "schedule": "2024-07-26T10:00:00Z",
       "venueId": "venue1",
       "categories": ["Team"],
-      "countries": ["USA", "Canada"]
+      "countries": ["USA", "Korea"]
     },
     {
       "id": "event4",
@@ -337,7 +337,7 @@
       "schedule": "2024-07-26T18:00:00Z",
       "venueId": "venue1",
       "categories": ["Team"],
-      "countries": ["Spain", "Italy"]
+      "countries": ["Algeria", "Italy"]
     },
     {
       "id": "event6",
@@ -345,7 +345,7 @@
       "schedule": "2024-07-26T09:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
-      "countries": ["Japan", "Australia"]
+      "countries": ["Japan", "Morocco"]
     },
     {
       "id": "event7",
@@ -353,7 +353,7 @@
       "schedule": "2024-07-26T13:00:00Z",
       "venueId": "venue2",
       "categories": ["Team"],
-      "countries": ["UK", "Russia"]
+      "countries": ["Belgium", "Greece"]
     },
     {
       "id": "event8",
@@ -361,7 +361,7 @@
       "schedule": "2024-07-26T17:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
-      "countries": ["China", "India"]
+      "countries": ["China", "Switzerland"]
     },
     {
       "id": "event9",
@@ -377,7 +377,7 @@
       "schedule": "2024-07-26T22:00:00Z",
       "venueId": "venue2",
       "categories": ["Team"],
-      "countries": ["Italy", "Spain"]
+      "countries": ["Italy", "Algeria"]
     },
     {
       "id": "event11",
@@ -385,7 +385,7 @@
       "schedule": "2024-07-26T23:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
-      "countries": ["Netherlands", "Portugal"]
+      "countries": ["Jamaica", "Portugal"]
     },
     {
       "id": "event12",
@@ -401,7 +401,7 @@
       "schedule": "2024-07-27T14:00:00Z",
       "venueId": "venue2",
       "categories": ["Team"],
-      "countries": ["Germany", "Russia"]
+      "countries": ["Italy", "Greece"]
     },
     {
       "id": "event14",
@@ -417,7 +417,7 @@
       "schedule": "2024-07-27T09:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
-      "countries": ["UK", "Russia"]
+      "countries": ["Belgium", "Greece"]
     },
     {
       "id": "event16",
@@ -425,7 +425,7 @@
       "schedule": "2024-07-27T13:00:00Z",
       "venueId": "venue2",
       "categories": ["Team"],
-      "countries": ["China", "India"]
+      "countries": ["China", "Switzerland"]
     },
     {
       "id": "event17",
@@ -441,7 +441,7 @@
       "schedule": "2024-07-27T20:00:00Z",
       "venueId": "venue1",
       "categories": ["Team"],
-      "countries": ["Germany", "Netherlands"]
+      "countries": ["Italy", "Jamaica"]
     },
     {
       "id": "event19",
@@ -457,7 +457,7 @@
       "schedule": "2024-07-27T23:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
-      "countries": ["Spain", "Brazil"]
+      "countries": ["Algeria", "Brazil"]
     },
     {
       "id": "event21",
@@ -473,7 +473,7 @@
       "schedule": "2024-07-28T14:00:00Z",
       "venueId": "venue2",
       "categories": ["Team"],
-      "countries": ["France", "Canada"]
+      "countries": ["France", "Korea"]
     },
     {
       "id": "event23",
@@ -481,7 +481,7 @@
       "schedule": "2024-07-28T18:00:00Z",
       "venueId": "venue1",
       "categories": ["Team"],
-      "countries": ["Russia", "China"]
+      "countries": ["Greece", "China"]
     },
     {
       "id": "event24",
@@ -489,7 +489,7 @@
       "schedule": "2024-07-28T09:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
-      "countries": ["Australia", "Japan"]
+      "countries": ["Morocco", "Japan"]
     },
     {
       "id": "event25",
@@ -505,7 +505,7 @@
       "schedule": "2024-07-28T17:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
-      "countries": ["Russia", "China"]
+      "countries": ["Greece", "China"]
     },
     {
       "id": "event27",
@@ -521,7 +521,7 @@
       "schedule": "2024-07-28T22:00:00Z",
       "venueId": "venue2",
       "categories": ["Team"],
-      "countries": ["Brazil", "Germany"]
+      "countries": ["Brazil", "Italy"]
     },
     {
       "id": "event29",
@@ -529,7 +529,7 @@
       "schedule": "2024-07-28T23:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
-      "countries": ["Portugal", "Spain"]
+      "countries": ["Portugal", "Algeria"]
     }
   ]
 }
