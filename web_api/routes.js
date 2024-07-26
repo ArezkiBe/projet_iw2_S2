@@ -8,6 +8,8 @@ import MapPage from "./views/MapPage.js";
 import Jeu from "./views/Jeu.js";
 import Calendar from "./views/Calendar.js";
 import Jeux from "./views/Jeux.js";
+import About from "./views/About.js";
+import Contact from "./views/Contact.js";
 
 export default {
   "/" : Home,
@@ -18,5 +20,7 @@ export default {
   "/map": MapPage,
   "/spot": Spot,
   "/spots": Spots,
+  "/about": About,
+  "/contact": Contact,
   "*": MapPage,
 };
