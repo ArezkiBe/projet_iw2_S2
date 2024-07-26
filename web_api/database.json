@@ -57,7 +57,7 @@
         "type": ["Indoor", "Swimming"],
         "bannerUrl": "https://example.com/aquatic_banner.png",
         "logoUrl": "https://example.com/aquatic_logo.png",
-        "events": ["event2"],
+        "events": ["event15", "event17"],
         "coordinates": [48.8596, 2.3470]
     },
     {
@@ -69,7 +69,7 @@
         "type": ["Indoor", "Outdoor"],
         "bannerUrl": "https://example.com/greenpark_banner.png",
         "logoUrl": "https://example.com/greenpark_logo.png",
-        "events": ["event3"],
+        "events": ["event16"],
         "coordinates": [48.8534, 2.3488]
     },
     {
@@ -81,7 +81,7 @@
         "type": ["Indoor"],
         "bannerUrl": "https://example.com/sportscomplex_banner.png",
         "logoUrl": "https://example.com/sportscomplex_logo.png",
-        "events": ["event4"],
+        "events": ["event17"],
         "coordinates": [48.8600, 2.3300]
     },
     {
@@ -117,7 +117,7 @@
         "type": ["Outdoor", "Skating"],
         "bannerUrl": "https://example.com/skatepark_banner.png",
         "logoUrl": "https://example.com/skatepark_logo.png",
-        "events": ["event7"],
+        "events": ["event19"],
         "coordinates": [48.8600, 2.3450]
     },
     {
@@ -129,7 +129,7 @@
         "type": ["Outdoor", "Indoor", "Tennis"],
         "bannerUrl": "https://example.com/tennisclub_banner.png",
         "logoUrl": "https://example.com/tennisclub_logo.png",
-        "events": ["event8"],
+        "events": ["event20"],
         "coordinates": [48.8520, 2.3500]
     },
     {
@@ -141,7 +141,7 @@
         "type": ["Indoor", "Gymnastics"],
         "bannerUrl": "https://example.com/gymnastics_banner.png",
         "logoUrl": "https://example.com/gymnastics_logo.png",
-        "events": ["event9"],
+        "events": ["event21"],
         "coordinates": [48.8580, 2.3200]
     }
   ],
@@ -302,7 +302,7 @@
     {
       "id": "event1",
       "sport": "sport1",
-      "schedule": "2024-07-20T18:00:00Z",
+      "schedule": "2024-07-27T18:00:00Z",
       "venueId": "venue1",
       "categories": ["Team"],
       "countries": ["France", "Italy"]
@@ -446,7 +446,7 @@
     {
       "id": "event19",
       "sport": "sport1",
-      "schedule": "2024-07-27T22:00:00Z",
+      "schedule": "2024-07-28T22:00:00Z",
       "venueId": "venue2",
       "categories": ["Team"],
       "countries": ["Portugal", "Italy"]
@@ -454,7 +454,7 @@
     {
       "id": "event20",
       "sport": "sport1",
-      "schedule": "2024-07-27T23:00:00Z",
+      "schedule": "2024-07-28T23:00:00Z",
       "venueId": "venue3",
       "categories": ["Team"],
       "countries": ["Algeria", "Brazil"]

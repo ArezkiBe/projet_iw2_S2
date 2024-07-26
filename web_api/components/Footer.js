@@ -15,16 +15,19 @@ class Footer extends Component {
             class: "text-white lg:text-[35.5px] underline mt-[32px] lg:mt-[45.44px] cursor-pointer"
           },
           props: {
-            path: "/",
+            path: "/contact",
             title: "Contact"
           }
         },
         {
-          type: "div",
+          type: BrowserLink,
           attributes: {
-            class: "text-white lg:text-[35.5px] underline mt-[32px] lg:mt-[45.44px]  cursor-pointer"
+            class: "text-white lg:text-[35.5px] underline mt-[32px] lg:mt-[45.44px] cursor-pointer"
           },
-          children: ["A propos"]
+          props: {
+            path: "/about",
+            title: "A propos"
+          }
         },
         {
           type: "div",

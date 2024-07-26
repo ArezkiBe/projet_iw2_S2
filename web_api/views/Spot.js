@@ -280,7 +280,7 @@ class Spot extends Component {
     if (events.length === 0) {
       return "Il n'y a rien à cette date";
     }
-    const sport = this.data.getSports().find(s => s.name === events[0].sport);
+    const sport = this.data.getSports().find(s => s.id === events[0].sport);
 
     const renderCategories = (events) => {
       let result = [];
