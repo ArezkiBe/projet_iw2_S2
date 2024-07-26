@@ -338,8 +338,9 @@ class Calendar extends Component {
 
 export default Calendar;
 
-
+//1350PX 937.2px
 //1200PX 852px
+//504PX 357.84px
 //403PX 286.13px
 //332PX 235.72px
 //301PX 213.71px

@@ -103,7 +103,7 @@ class Jeux extends Component {
             {
               type: "button",
               attributes: {
-                class:"w-[73px] lg:w-[273.71px] h-[26px] lg:h-[95.14px] px-[7px] text-sm font-texte  bg-[#F0282D] rounded-2xl font-[760] text-[#FFB114]",
+                class:"w-[73px] lg:w-[273.71px] h-[26px] lg:h-[95.14px] px-[7px] text-sm lg:text-[35.5px] font-texte  bg-[#F0282D] rounded-2xl font-[760] text-[#FFB114]",
               },
               events: {
                 click: () => {
