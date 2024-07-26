@@ -76,14 +76,14 @@ class Spots extends Component {
             {
               type :"div",
               attributes : {
-                class: "text-center font-bold text-[2.5rem] font-title"
+                class: "text-center text-4xl lg:text-[56.8px] font-bold mt-[2.5rem] lg:mt-[56.8px] ml-[6.31] mr-[6.37]"
               },
               children: ["Spots"],
             },
             {
               type :"div",
               attributes : {
-                class: "mt-[24px] flex justify-center items-center text-center px-[1.813rem] font-texte"
+                class: "mt-[2rem] lg:mt-[56.8px] px-[1.25rem] lg:px-[73.84px] text-center lg:text-[35.5px]"
               },
               children: [this.data.getMainPage().description],
             },
@@ -131,12 +131,12 @@ class Spots extends Component {
     return {
       type: "div",
       attributes: {
-        class: `flex-shrink-0 w-24 h-7 ${isSelected ? "bg-blue-700" : "bg-blue-500"} text-white rounded-xl`,
+        class: `flex-shrink-0 w-24 lg:w-[248.85px] h-7 lg:h-[56.8px] ${isSelected ? "bg-blue-700" : "bg-blue-500"} text-white rounded-[7.1px]`,
       },
       children: [
         {
           type: "button",
-          attributes: { class: "w-full h-full font-texte" },
+          attributes: { class: "w-full h-full font-texte lg:text-[35.5px]" },
           events: {
             click: () => this.setFilterType(filterType),
           },
@@ -171,20 +171,20 @@ class Spots extends Component {
           {
             type: "div",
             attributes: {
-              class: "px-2 pb-[26px] rounded-lg"
+              class: "px-2 pb-[26px] rounded-lg lg:w-[937.2px] lg:h-[357.84px] lg:space-x-20"
             },
             children: [
               {
                 type: "div",
                 attributes: {
-                  class: "font-bold text-center my-[10px] font-texte"
+                  class: "font-bold text-center my-[10px] font-texte lg:text-[45.44px] lg:mt-[28.4px]"
                 },
                 children: [spot.name]
               },
               {
                 type: "div",
                 attributes: {
-                  class: "flex items-center bg-white"
+                  class: "flex text-center lg:space-x-6 bg-white"
                 },
                 children: [
                   {
@@ -192,7 +192,7 @@ class Spots extends Component {
                     attributes: {
                       src: spot.logoUrl,
                       alt: spot.name,
-                      class: "w-[102px] h-[102px] rounded-md"
+                      class: "w-[102px] h-[102px] lg:w-[213px] lg:h-[213px] rounded-md"
                     }
                   },
                   {
@@ -204,21 +204,21 @@ class Spots extends Component {
                       {
                         type: "div",
                         attributes: {
-                          class: "font-semibold text-[11px] opacity-50 w-[119px] text-center"
+                          class: "font-semibold text-[11px] lg:text-[35.5px] opacity-50 w-[119px] lg:w-[300px]"
                         },
                         children: [spot.address]
                       },
                       {
                         type: "div",
                         attributes: {
-                          class: "flex justify-center items-center space-x-2 mt-[10px]"
+                          class: "flex justify-center items-center space-x-10 mt-[10px] lg:mt-[40px]"
                         },
                         children: spot.type.map(type => ({
                           type: "img",
                           attributes: {
                             src: type.logoUrl,
                             alt: type.name,
-                            class: "w-[30px] h-[30px]"
+                            class: "w-[30px] h-[30px] lg:w-[78.11px] lg:h-[84.49px]"
                           }
                         }))
                       }
@@ -239,7 +239,7 @@ class Spots extends Component {
                       {
                         type: Button,
                         attributes: {
-                          class: "font-texte  bg-[#F0282D] text-[#FFB114] px-4 py-2 rounded-full cursor-pointer"
+                          class: "w-[73px] lg:w-[273.71px] h-[26px] lg:h-[95.14px] px-[7px] text-sm lg:text-[35.5px] font-texte  bg-[#F0282D] rounded-2xl font-[760] text-[#FFB114]"
                         },
                         events: {
                           click: () => {
@@ -275,7 +275,7 @@ class Spots extends Component {
       children.push({
         type: "img",
         attributes: {
-          class: "w-[18px] h-[18px]",
+          class: "w-[18px] h-[18px] lg:w-[43.31px] lg:h-[43.31px]",
           src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/"+(rating >= i ? "full_star" : "empty_star")+".svg?alt=media&token=cd6484b6-975d-4956-adb3-d88b19c63b40",
         },
       });
