@@ -173,7 +173,7 @@ class Home extends Component {
               type: "div",
               attributes: {
                 class:
-                  "mt-[3rem] lg:mt-[56.8px] text-center font-bold lg:text-[56.8px] font-title",
+                  "mt-[3rem] lg:mt-[56.8px] text-[40px] text-center font-bold lg:text-[56.8px] font-title",
               },
               children: ["Prochainement"],
             },

@@ -9,7 +9,7 @@ class Spot extends Component {
     this.data = props.data;
 
     const spotId = this.props.id;
-    const spot = this.data.getSpots().find(s => s.id === spotId);
+    const spot = this.data.getSpots().find((s) => s.id === spotId);
     this.spot = spot;
 
     this.days = [];
@@ -27,86 +27,100 @@ class Spot extends Component {
     let now = new Date();
     let tomorrow = new Date().addDays(1);
     let afterTomorrow = new Date().addDays(2);
-    const days = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
-    const months = ['Jan', 'Fev', 'Mars', 'Avr', 'Mai', 'Jui', 'Jui', 'Août', 'Sept', 'Oct', 'Nov', 'Dec'];
-    
-    
+    const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+    const months = [
+      "Jan",
+      "Fev",
+      "Mars",
+      "Avr",
+      "Mai",
+      "Jui",
+      "Jui",
+      "Août",
+      "Sept",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
     this.days = [
       {
-        day: days[ now.getDay() ],
+        day: days[now.getDay()],
         date: now.getDate(),
-        month: months[ now.getMonth() ]
+        month: months[now.getMonth()],
       },
       {
-        day: days[ tomorrow.getDay() ],
+        day: days[tomorrow.getDay()],
         date: tomorrow.getDate(),
-        month: months[ tomorrow.getMonth() ]
+        month: months[tomorrow.getMonth()],
       },
       {
-        day: days[ afterTomorrow.getDay() ],
+        day: days[afterTomorrow.getDay()],
         date: afterTomorrow.getDate(),
-        month: months[ afterTomorrow.getMonth() ]
+        month: months[afterTomorrow.getMonth()],
       },
-    ]
+    ];
   }
 
   initEvents() {
     let spot = this.spot;
     let events = this.data.getEvents();
 
-
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
     const afterTomorrow = new Date(today);
     afterTomorrow.setDate(today.getDate() + 2);
-    
-    const formatDate = (date) => date.toISOString().split('T')[0]; // Format YYYY-MM-DD
 
-    const spotEvents = events.filter(event => spot.events.includes(event.id));
+    const formatDate = (date) => date.toISOString().split("T")[0]; // Format YYYY-MM-DD
+
+    const spotEvents = events.filter((event) => spot.events.includes(event.id));
 
     const eventsByDate = {
-        today: [],
-        tomorrow: [],
-        afterTomorrow: []
+      today: [],
+      tomorrow: [],
+      afterTomorrow: [],
     };
 
-    spotEvents.forEach(event => {
-        const eventDate = new Date(event.schedule);
-        const eventDateStr = formatDate(eventDate);
+    spotEvents.forEach((event) => {
+      const eventDate = new Date(event.schedule);
+      const eventDateStr = formatDate(eventDate);
 
-        if (formatDate(today) === eventDateStr) {
-            eventsByDate.today.push(event);
-        } else if (formatDate(tomorrow) === eventDateStr) {
-            eventsByDate.tomorrow.push(event);
-        } else if (formatDate(afterTomorrow) === eventDateStr) {
-            eventsByDate.afterTomorrow.push(event);
-        }
+      if (formatDate(today) === eventDateStr) {
+        eventsByDate.today.push(event);
+      } else if (formatDate(tomorrow) === eventDateStr) {
+        eventsByDate.tomorrow.push(event);
+      } else if (formatDate(afterTomorrow) === eventDateStr) {
+        eventsByDate.afterTomorrow.push(event);
+      }
     });
 
     const groupBySport = (events) => {
-        const grouped = {};
-        events.forEach(event => {
-            if (!grouped[event.sport]) {
-                grouped[event.sport] = [];
-            }
-            grouped[event.sport].push(event);
-        });
-        return Object.values(grouped);
+      const grouped = {};
+      events.forEach((event) => {
+        if (!grouped[event.sport]) {
+          grouped[event.sport] = [];
+        }
+        grouped[event.sport].push(event);
+      });
+      return Object.values(grouped);
     };
 
-    this.events = [groupBySport(eventsByDate.today), groupBySport(eventsByDate.tomorrow), groupBySport(eventsByDate.afterTomorrow)]
-
+    this.events = [
+      groupBySport(eventsByDate.today),
+      groupBySport(eventsByDate.tomorrow),
+      groupBySport(eventsByDate.afterTomorrow),
+    ];
   }
 
-  setDay (position) {
+  setDay(position) {
     if (this.selectedDay !== position) {
-      this.selectedDay = position
+      this.selectedDay = position;
     } else {
       return;
     }
 
-    this.updateCalendar()
+    this.updateCalendar();
   }
 
   updateCalendar() {
@@ -145,7 +159,10 @@ class Spot extends Component {
           children: [
             {
               type: "div",
-              attributes: { class: "text-4xl font-bold mt-[2.5rem] ml-[6.31] mr-[6.37] font-title" },
+              attributes: {
+                class:
+                  "text-4xl lg:text-[56.8px] font-bold mt-[2.5rem] lg:mt-[56.8px] ml-[6.31] mr-[6.37]",
+              },
               children: [this.spot.name],
             },
             {
@@ -156,19 +173,22 @@ class Spot extends Component {
             },
             {
               type: "div",
-              attributes: { class: "flex justify-center mt-[2rem]" },
+              attributes: { class: "flex justify-center mt-[2rem] lg:mt-[56.8px]" },
               children: this.renderStars(),
             },
             {
               type: "p",
-              attributes: { class: "mt-[2rem]  px-[1.25rem] text-center font-texte" },
+              attributes: {
+                class: "mt-[2rem] lg:mt-[56.8px] px-[1.25rem] lg:px-[73.84px] text-center lg:text-[35.5px]",
+              },
               children: [this.spot.description],
             },
 
             {
               type: "div",
               attributes: {
-                class: "flex justify-around mt-[1.25rem] text-center text-base font-texte",
+                class:
+                  "flex justify-around mt-[1.25rem] lg:mt-[102.24px] text-center text-base lg:text-[35.5px]",
               },
               children: [
                 { type: "span", children: ["Intérieur"] },
@@ -180,27 +200,25 @@ class Spot extends Component {
             {
               type: "div",
               attributes: {
-                class: "text-[2.25rem] font-semibold mt-[2rem] text-center font-title",
+                class:
+                  "text-[2.25rem] lg:text-[56.8px] font-semibold mt-[2rem] lg:mt-[102.24px] text-center",
               },
               children: ["Sports retransmis"],
             },
             {
               type: "div",
               attributes: {
-                class: "flex justify-center mt-[1rem] lg:mt-[28.4px]"
+                class: "flex justify-center mt-[1rem] lg:mt-[28.4px]",
               },
               children: [
                 {
                   type: "div",
                   attributes: {
-                    class: "flex space-x-6 lg:space-x-20"
+                    class: "flex space-x-6 lg:space-x-20",
                   },
-                  children: [
-                    this.renderCalendar(),
-                  ]
-                }
-                
-              ]
+                  children: [this.renderCalendar()],
+                },
+              ],
             },
             this.renderEvents(),
           ],
@@ -216,61 +234,88 @@ class Spot extends Component {
       type: "div",
       attributes: {
         class: "flex space-x-6",
-        id: "calendar"
+        id: "calendar",
       },
       children: [
-        this.renderCalendarDay(this.days[0].day, this.days[0].date.toString(), this.days[0].month, 0),
-        this.renderCalendarDay(this.days[1].day, this.days[1].date.toString(), this.days[1].month, 1),
-        this.renderCalendarDay(this.days[2].day, this.days[2].date.toString(), this.days[2].month, 2),
+        this.renderCalendarDay(
+          this.days[0].day,
+          this.days[0].date.toString(),
+          this.days[0].month,
+          0
+        ),
+        this.renderCalendarDay(
+          this.days[1].day,
+          this.days[1].date.toString(),
+          this.days[1].month,
+          1
+        ),
+        this.renderCalendarDay(
+          this.days[2].day,
+          this.days[2].date.toString(),
+          this.days[2].month,
+          2
+        ),
       ],
-    }
+    };
   }
 
   renderCalendarDay(weekDay, day, Month, position) {
     return {
       type: "div",
       attributes: {
-        class: "flex flex-col items-center justify-center w-[5.625rem] h-[3.75rem] rounded-md " + (this.selectedDay === position ? "bg-[#F79E1B]" : "bg-[#DBC9C9]"),
+        class:
+          "flex flex-col items-center justify-around w-[5.625rem] lg:w-[272.6px] h-[3.75rem] lg:h-[106.5px] rounded-md lg:rounded-md " +
+          (this.selectedDay === position
+            ? "bg-[#F79E1B] lg:bg-[#F79E1B]"
+            : "bg-[#DBC9C9] lg:bg-[#DBC9C9]") +
+          (this.selectedDay === position
+            ? "lg:bg-[#F79E1B]"
+            : "lg:bg-[#DBC9C9]"),
       },
       events: {
-        click: [function () {
-          this.setDay(position);
-        }.bind(this)],
+        click: [
+          function () {
+            this.setDay(position);
+          }.bind(this),
+        ],
       },
       children: [
         {
           type: "span",
           attributes: {
-            class: "text-sm font-texte"
+            class: "text-sm lg:text-[28.4px] font-texte",
           },
-          children: [weekDay]
+          children: [weekDay],
         },
         {
           type: "span",
           attributes: {
-            class: "text-sm font-texte"
+            class: "text-sm lg:text-[28.4px] font-texte",
           },
-          children: [day]
+          children: [day],
         },
         {
           type: "span",
           attributes: {
-            class: "text-sm font-texte"
+            class: "text-sm lg:text-[28.4px] font-texte",
           },
-          children: [Month]
-        }
-      ]
-    }
+          children: [Month],
+        },
+      ],
+    };
   }
 
   renderEvents() {
     return {
       type: "div",
       attributes: {
-        class: "mt-[2rem] flex flex-col justify-center items-center mb-[2.5rem] px-[12px]",
+        class:
+          "mt-[2rem] flex flex-col justify-center items-center mb-[2.5rem] px-[12px]",
         id: "events",
       },
-      children: this.events[this.selectedDay].map(event => this.renderSportEvent(event)),
+      children: this.events[this.selectedDay].map((event) =>
+        this.renderSportEvent(event)
+      ),
     };
   }
 
@@ -278,28 +323,27 @@ class Spot extends Component {
     if (events.length === 0) {
       return "Il n'y a rien à cette date";
     }
-    const sport = this.data.getSports().find(s => s.name === events[0].sport);
+    const sport = this.data.getSports().find((s) => s.name === events[0].sport);
 
     const renderCategories = (events) => {
       let result = [];
       for (let i = 0; i < events.length; i++) {
-        result.push(
-          {
-            type: "div",
-            attributes: { class: "text-xs whitespace-pre-line pl-[1.81rem]" },
-            children: this.formatEventTimes(events[i]),
-          }
-        )
+        result.push({
+          type: "div",
+          attributes: { class: "text-xs whitespace-pre-line pl-[1.81rem] lg:mt-[35.5px] lg:text-[35.5px]" },
+          children: this.formatEventTimes(events[i]),
+        });
       }
 
       return result;
-    }
+    };
 
     return {
       type: "div",
       attributes: {
         class:
-        "flex items-center p-2 mt-[2rem] bg-[#FFF5F5] border border-black rounded-[1.87rem] w-[22.62rem] h-[6.25rem]",
+          "flex items-center p-2 mt-[2rem] bg-[#FFF5F5] border border-black rounded-[1.87rem] w-[22.62rem] lg:w-[852px] h-[6.25rem] lg:h-[286.13px] lg:justify-around",
+          //flex items-center p-2 mt-[2rem] bg-[#FFF5F5] border border-black rounded-[1.87rem] w-[22.62rem] h-[6.25rem]
       },
       children: [
         {
@@ -307,7 +351,7 @@ class Spot extends Component {
           attributes: {
             src: sport.logoUrl,
             alt: sport.name,
-            class: "w-[5rem] h-[5rem] ml-[2rem]",
+            class: "w-[5rem] h-[5rem] ml-[2rem] lg:w-[213.71px] lg:h-[235.72px]",
           },
         },
         {
@@ -315,7 +359,7 @@ class Spot extends Component {
           children: [
             {
               type: "div",
-              attributes: { class: "font-bold text-sm p-[0.625rem]" },
+              attributes: { class: "font-bold text-sm p-[0.625rem lg:text-[45.44px]" },
               children: [sport.name],
             },
             ...renderCategories(events),
@@ -330,43 +374,50 @@ class Spot extends Component {
 
     const startTime = new Date(events.start_time);
     const endTime = new Date(events.end_time);
-    
+
     const startHour = startTime.getUTCHours();
     const startMinute = startTime.getUTCMinutes();
     const endHour = endTime.getUTCHours();
     const endMinute = endTime.getUTCMinutes();
 
-    const startFormatted = `${startHour}h${startMinute ? '-' + startMinute : ''}`;
-    const endFormatted = `${endHour}h${endMinute ? '-' + endMinute : ''}`;
-    
+    const startFormatted = `${startHour}h${
+      startMinute ? "-" + startMinute : ""
+    }`;
+    const endFormatted = `${endHour}h${endMinute ? "-" + endMinute : ""}`;
+
     const timeInterval = `${startFormatted}-${endFormatted}`;
-    
-    const categories = events.categories.join(', ');
+
+    const categories = events.categories.join(", ");
 
     if (!timeCategoryMap[timeInterval]) {
-        timeCategoryMap[timeInterval] = [];
+      timeCategoryMap[timeInterval] = [];
     }
     timeCategoryMap[timeInterval].push(categories);
 
-    const result = Object.entries(timeCategoryMap).map(([timeInterval, categoriesList]) => {
+    const result = Object.entries(timeCategoryMap).map(
+      ([timeInterval, categoriesList]) => {
         const uniqueCategories = [...new Set(categoriesList.flat())]; // Éliminer les doublons
-        return `${timeInterval}: ${uniqueCategories.join(', ')}`;
-    });
+        return `${timeInterval}: ${uniqueCategories.join(", ")}`;
+      }
+    );
 
     return result;
   }
-
 
   renderStars() {
     let children = [];
 
     for (let i = 1; i <= 5; i++) {
-        children.push({
-          type: "img",
-          attributes: {
-            src: "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/"+(this.spot.rating >= i ? "full_star" : "empty_star")+".svg?alt=media&token=cd6484b6-975d-4956-adb3-d88b19c63b40",
-          },
-        });      
+      children.push({
+        type: "img",
+        attributes: {
+          class: "lg:w-[43.31px] lg:h-[43.31px]",
+          src:
+            "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/" +
+            (this.spot.rating >= i ? "full_star" : "empty_star") +
+            ".svg?alt=media&token=cd6484b6-975d-4956-adb3-d88b19c63b40",
+        },
+      });
     }
 
     return children;
@@ -385,5 +436,3 @@ class Spot extends Component {
 }
 
 export default Spot;
-
-
