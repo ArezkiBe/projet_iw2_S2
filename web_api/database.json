@@ -325,11 +325,12 @@
     },
     {
       "id": "event4",
-      "sport": "sport3",
-      "schedule": "2024-07-26T14:00:00Z",
-      "venueId": "venue2",
-      "categories": ["Team"],
-      "countries": ["France", "Brazil"]
+      "sport": "Basket3x3",
+      "schedule": "2024-07-25T19:00:00Z",
+      "categories": ["Professional"],
+      "countries": ["Spain", "Argentina"],
+      "start_time": "2024-07-25T19:00:00Z",
+      "end_time": "2024-07-25T21:00:00Z"
     },
     {
       "id": "event5",
@@ -365,11 +366,12 @@
     },
     {
       "id": "event9",
-      "sport": "sport1",
-      "schedule": "2024-07-26T20:00:00Z",
-      "venueId": "venue1",
-      "categories": ["Team"],
-      "countries": ["Brazil", "Argentina"]
+      "sport": "Gymnastics",
+      "schedule": "2024-07-25T17:00:00Z",
+      "categories": ["Olympics"],
+      "countries": ["China", "USA"],
+      "start_time": "2024-07-25T17:00:00Z",
+      "end_time": "2024-07-25T20:00:00Z"
     },
     {
       "id": "event10",
