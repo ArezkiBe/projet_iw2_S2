@@ -88,7 +88,7 @@ class DailyCalendar extends Component {
                   },
                   children: ["CALENDRIER"],
                   events: {
-                    click: () => window.location.href = "/calendrier",
+                    click: () => window.location.href = "/calendar",
                   }
                 },
                 {

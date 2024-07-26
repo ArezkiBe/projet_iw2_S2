@@ -273,11 +273,6 @@ class Calendar extends Component {
                   attributes: {
                     class: "text-[11px] font-texte bg-black text-white rounded-[30px] w-[116px] h-[35px]",
                   },
-                  events: {
-                    click: () => {
-                      window.location.href = `/calendar`;
-                    }
-                  },
                   children: ["CALENDRIER"],
                 },
                 {
