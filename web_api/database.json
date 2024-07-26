@@ -37,103 +37,112 @@
   ],
   "spots": [
     {
-      "id": "spot1",
-      "name": "Central Stadium",
-      "description": "A large stadium for various sports events.",
-      "rating": 4,
-      "address": "123 Main St, City, Country",
-      "type": ["Outdoor"],
-      "bannerUrl": "https://example.com/stadium_banner.png",
-      "logoUrl": "https://example.com/stadium_logo.png",
-      "events": ["event4", "event5", "event6"]
+        "id": "spot1",
+        "name": "Central Stadium",
+        "description": "A large stadium for various sports events.",
+        "rating": 4,
+        "address": "123 Main St, City, Country",
+        "type": ["Outdoor"],
+        "bannerUrl": "https://example.com/stadium_banner.png",
+        "logoUrl": "https://example.com/stadium_logo.png",
+        "events": ["event4", "event5", "event6"],
+        "coordinates": [48.8566, 2.3522]
     },
     {
-      "id": "spot2",
-      "name": "Aquatic Center",
-      "description": "A facility for swimming and diving events.",
-      "rating": 5,
-      "address": "456 Ocean Dr, City, Country",
-      "type": ["Indoor", "Swimming"],
-      "bannerUrl": "https://example.com/aquatic_banner.png",
-      "logoUrl": "https://example.com/aquatic_logo.png",
-      "events": ["event2"]
+        "id": "spot2",
+        "name": "Aquatic Center",
+        "description": "A facility for swimming and diving events.",
+        "rating": 5,
+        "address": "456 Ocean Dr, City, Country",
+        "type": ["Indoor", "Swimming"],
+        "bannerUrl": "https://example.com/aquatic_banner.png",
+        "logoUrl": "https://example.com/aquatic_logo.png",
+        "events": ["event2"],
+        "coordinates": [48.8596, 2.3470]
     },
     {
-      "id": "spot3",
-      "name": "Green Park Arena",
-      "description": "A versatile venue for sports and concerts.",
-      "rating": 3,
-      "address": "789 Park Ave, City, Country",
-      "type": ["Indoor", "Outdoor"],
-      "bannerUrl": "https://example.com/greenpark_banner.png",
-      "logoUrl": "https://example.com/greenpark_logo.png",
-      "events": ["event3"]
+        "id": "spot3",
+        "name": "Green Park Arena",
+        "description": "A versatile venue for sports and concerts.",
+        "rating": 3,
+        "address": "789 Park Ave, City, Country",
+        "type": ["Indoor", "Outdoor"],
+        "bannerUrl": "https://example.com/greenpark_banner.png",
+        "logoUrl": "https://example.com/greenpark_logo.png",
+        "events": ["event3"],
+        "coordinates": [48.8534, 2.3488]
     },
     {
-      "id": "spot4",
-      "name": "City Sports Complex",
-      "description": "A complex for various indoor sports.",
-      "rating": 4,
-      "address": "101 City Rd, City, Country",
-      "type": ["Indoor"],
-      "bannerUrl": "https://example.com/sportscomplex_banner.png",
-      "logoUrl": "https://example.com/sportscomplex_logo.png",
-      "events": ["event4"]
+        "id": "spot4",
+        "name": "City Sports Complex",
+        "description": "A complex for various indoor sports.",
+        "rating": 4,
+        "address": "101 City Rd, City, Country",
+        "type": ["Indoor"],
+        "bannerUrl": "https://example.com/sportscomplex_banner.png",
+        "logoUrl": "https://example.com/sportscomplex_logo.png",
+        "events": ["event4"],
+        "coordinates": [48.8600, 2.3300]
     },
     {
-      "id": "spot5",
-      "name": "Mountain Bike Trail",
-      "description": "A challenging trail for mountain biking.",
-      "rating": 5,
-      "address": "202 Trail Ln, Mountain Town, Country",
-      "type": ["Outdoor", "Cycling"],
-      "bannerUrl": "https://example.com/biketrail_banner.png",
-      "logoUrl": "https://example.com/biketrail_logo.png",
-      "events": ["event5"]
+        "id": "spot5",
+        "name": "Mountain Bike Trail",
+        "description": "A challenging trail for mountain biking.",
+        "rating": 5,
+        "address": "202 Trail Ln, Mountain Town, Country",
+        "type": ["Outdoor", "Cycling"],
+        "bannerUrl": "https://example.com/biketrail_banner.png",
+        "logoUrl": "https://example.com/biketrail_logo.png",
+        "events": ["event5"],
+        "coordinates": [48.8500, 2.3200]
     },
     {
-      "id": "spot6",
-      "name": "National Equestrian Center",
-      "description": "A premier venue for equestrian sports.",
-      "rating": 4,
-      "address": "303 Horse Rd, City, Country",
-      "type": ["Outdoor", "Equestrian"],
-      "bannerUrl": "https://example.com/equestrian_banner.png",
-      "logoUrl": "https://example.com/equestrian_logo.png",
-      "events": ["event6"]
+        "id": "spot6",
+        "name": "National Equestrian Center",
+        "description": "A premier venue for equestrian sports.",
+        "rating": 4,
+        "address": "303 Horse Rd, City, Country",
+        "type": ["Outdoor", "Equestrian"],
+        "bannerUrl": "https://example.com/equestrian_banner.png",
+        "logoUrl": "https://example.com/equestrian_logo.png",
+        "events": ["event6"],
+        "coordinates": [48.8550, 2.3400]
     },
     {
-      "id": "spot7",
-      "name": "Urban Skate Park",
-      "description": "A modern park for skateboarding and BMX.",
-      "rating": 3,
-      "address": "404 Skate St, City, Country",
-      "type": ["Outdoor", "Skating"],
-      "bannerUrl": "https://example.com/skatepark_banner.png",
-      "logoUrl": "https://example.com/skatepark_logo.png",
-      "events": ["event7"]
+        "id": "spot7",
+        "name": "Urban Skate Park",
+        "description": "A modern park for skateboarding and BMX.",
+        "rating": 3,
+        "address": "404 Skate St, City, Country",
+        "type": ["Outdoor", "Skating"],
+        "bannerUrl": "https://example.com/skatepark_banner.png",
+        "logoUrl": "https://example.com/skatepark_logo.png",
+        "events": ["event7"],
+        "coordinates": [48.8600, 2.3450]
     },
     {
-      "id": "spot8",
-      "name": "City Tennis Club",
-      "description": "A club for professional and amateur tennis.",
-      "rating": 5,
-      "address": "505 Tennis Dr, City, Country",
-      "type": ["Outdoor", "Indoor", "Tennis"],
-      "bannerUrl": "https://example.com/tennisclub_banner.png",
-      "logoUrl": "https://example.com/tennisclub_logo.png",
-      "events": ["event8"]
+        "id": "spot8",
+        "name": "City Tennis Club",
+        "description": "A club for professional and amateur tennis.",
+        "rating": 5,
+        "address": "505 Tennis Dr, City, Country",
+        "type": ["Outdoor", "Indoor", "Tennis"],
+        "bannerUrl": "https://example.com/tennisclub_banner.png",
+        "logoUrl": "https://example.com/tennisclub_logo.png",
+        "events": ["event8"],
+        "coordinates": [48.8520, 2.3500]
     },
     {
-      "id": "spot9",
-      "name": "Olympic Gymnastics Hall",
-      "description": "A world-class facility for gymnastics competitions.",
-      "rating": 5,
-      "address": "606 Gym Rd, City, Country",
-      "type": ["Indoor", "Gymnastics"],
-      "bannerUrl": "https://example.com/gymnastics_banner.png",
-      "logoUrl": "https://example.com/gymnastics_logo.png",
-      "events": ["event9"]
+        "id": "spot9",
+        "name": "Olympic Gymnastics Hall",
+        "description": "A world-class facility for gymnastics competitions.",
+        "rating": 5,
+        "address": "606 Gym Rd, City, Country",
+        "type": ["Indoor", "Gymnastics"],
+        "bannerUrl": "https://example.com/gymnastics_banner.png",
+        "logoUrl": "https://example.com/gymnastics_logo.png",
+        "events": ["event9"],
+        "coordinates": [48.8580, 2.3200]
     }
   ],
   "mainPage": {
@@ -249,12 +258,44 @@
   ],
   "venues": [
     {
-      "id": "venue1",
-      "name": "Wembley Stadium"
+        "id": "venue1",
+        "name": "Wembley Stadium",
+        "coordinates": [51.5560, -0.2820]
     },
     {
-      "id": "venue2",
-      "name": "Madison Square Garden"
+        "id": "venue2",
+        "name": "Madison Square Garden",
+        "coordinates": [40.7505, -73.9934]
+    },
+    {
+        "id": "venue3",
+        "name": "Palais des Congrès de Paris",
+        "coordinates": [48.8836, 2.2876]
+    },
+    {
+        "id": "venue4",
+        "name": "Accor Arena",
+        "coordinates": [48.8429, 2.3823]
+    },
+    {
+        "id": "venue5",
+        "name": "Le Zenith Paris",
+        "coordinates": [48.8983, 2.3916]
+    },
+    {
+        "id": "venue6",
+        "name": "Olympia Paris",
+        "coordinates": [48.8687, 2.3328]
+    },
+    {
+        "id": "venue7",
+        "name": "L'Olympia",
+        "coordinates": [48.8685, 2.3323]
+    },
+    {
+        "id": "venue8",
+        "name": "Le Grand Rex",
+        "coordinates": [48.8695, 2.3430]
     }
   ],
   "events": [

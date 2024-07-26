@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Carte Leaflet</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <title>Filtre avec Modale</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <div class="flex justify-between items-center mt-[32px] px-[16px]">
-            <img class="cursor-pointer" src="https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/filter.svg?alt=media&token=7c86bdb2-709b-4b6c-a42d-aabd8e9f0662">
-            <button class="border border-black rounded-full w-[116px] text-[11px] h-[35px]">
-                Sites de competition
-            </button>
-            <button class="border border-black rounded-full w-[116px] text-[11px] h-[35px]">
-                Spots
-            </button>
+    <button id="openFilterBtn">Ouvrir les filtres</button>
+
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span id="closeFilterBtn" class="close-btn">&times;</span>
+            <h2>Filtres</h2>
+            <form>
+                <!-- Ajoutez vos options de filtre ici -->
+                <label>
+                    Filtre 1
+                    <input type="checkbox" name="filter1">
+                </label>
+                <label>
+                    Filtre 2
+                    <input type="checkbox" name="filter2">
+                </label>
+                <!-- Ajoutez plus de filtres selon vos besoins -->
+            </form>
         </div>
     </div>
+
+
+    <div>
+        testsqdfsdqhofsdlfjlsqdjflksqdhgkldfjhgtestsqdfsdqhofsdlfjlsqdjflksqdhgkldfjhg
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
