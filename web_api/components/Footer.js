@@ -6,7 +6,7 @@ class Footer extends Component {
     return {
       type: "div",
       attributes: {
-        class: "flex flex-col justify-center items-center bg-black"
+        class: "flex flex-col justify-center items-center bg-black mt-[40px]"
       },
       children: [
         {

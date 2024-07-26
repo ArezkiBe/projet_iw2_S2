@@ -188,7 +188,7 @@
     },
     {
         "name": "USA",
-        "flagUrl": "https://example.com/usa_flag.png"
+        "flagUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/flagsUsa.svg?alt=media&token=99d9dbd0-c2f8-41ef-bf10-8ec5fc51071a"
     },
     {
         "name": "Spain",

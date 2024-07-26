@@ -8,11 +8,13 @@ import MapPage from "./views/MapPage.js";
 import Jeu from "./views/Jeu.js";
 import Calendar from "./views/Calendar.js";
 import Jeux from "./views/Jeux.js";
+import DailyCalendar from "./views/DailyCalendar.js";
 
 export default {
   "/" : Home,
   "/jeu": Jeu,
   "/calendar": Calendar,
+  "/daily": DailyCalendar,
   "/jeux": Jeux,
   "/page2": Page2,
   "/map": MapPage,
