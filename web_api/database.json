@@ -5,6 +5,7 @@
       "name": "Football",
       "description": ["A team sport played with a spherical ball between two teams of eleven players."],
       "type": "Team",
+      "spot_type": ["Outdoor"],
       "sponsors": ["1", "2", "4", "6"],
       "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/badMinton.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
       "bannerUrl": "https://example.com/football_banner.png"
@@ -14,6 +15,7 @@
       "name": "Tennis",
       "description": ["A racket sport that can be played individually against a single opponent or between two teams of two players each."],
       "type": "Individual",
+      "spot_type": ["Outdoor"],
       "sponsors": ["2", "4"],
       "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/archery.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
       "bannerUrl": "https://example.com/tennis_banner.png"
@@ -27,6 +29,7 @@
         "Dans les années 1920, les premiers matchs internationaux sont disputés, et dans les années 1950 les premiers championnats du monde masculins et féminins sont organisés."
       ],
       "type": "Team",
+      "spot_type": ["Indoor"],
       "sponsors": ["3","4","5","6"],
       "logoUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/basketBall.svg?alt=media&token=b8fd80aa-c9a9-42f7-b682-01d6b88e3eda",
       "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/iw2-s2.appspot.com/o/bgBasketBall.svg?alt=media&token=a1341b3a-5ad7-4567-955a-2e2e7d47f002"
