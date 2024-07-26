@@ -1,4 +1,3 @@
-import Page1 from "./views/Page1.js";
 import Page404 from "./views/Page404.js";
 import Spot from "./views/Spot.js";
 import Page2 from "./views/Page2.js";
@@ -7,8 +6,10 @@ import Spots from "./views/Spots.js";
 import MapPage from "./views/MapPage.js";
 import Jeu from "./views/Jeu.js";
 import Calendar from "./views/Calendar.js";
-import Jeux from "./views/Jeux.js";
 import DailyCalendar from "./views/DailyCalendar.js";
+import Jeux from "./views/Jeux.js";
+import Contact from "./views/Contact.js";
+import About from "./views/About.js";
 
 export default {
   "/" : Home,
@@ -20,5 +21,7 @@ export default {
   "/map": MapPage,
   "/spot": Spot,
   "/spots": Spots,
-  "*": MapPage,
+  "/contact": Contact,
+  "/about": About,
+  "*": Page404,
 };
